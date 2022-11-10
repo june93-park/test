@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>모바일온 예외정책</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.css"
+        integrity="sha512-rVfXYRlhHtd3C4PzoBxSaKhI/uYEi0/5K69RwK/cdxQld57PC6mZ7tkutR+KD96WrXZ6E/96qYeY4CVun7a0/w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="../resources/semantic/semantic.css" />
+    <link rel="stylesheet" href="../resources/css/layout.css" />
+    <link rel="stylesheet" href="../resources/css/contents.css" />
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="../resources/semantic/semantic.js"></script>
+    <script src="../resources/js/sticky.js"></script>
+
+</head>
+
+<body class="iframe-contents">
+    <div class="lg-contents size14">
+
+        <div class="ui pointing secondary menu">
+            <a class="item active">보안사고제보</a>
+            <a class="item">보안사고제보현황</a>
+        </div>
+
+        <div class="path-wrap">
+            <ul class="path">
+                <li>보안사고제보</li>
+                <li>보안사고제보</li>
+            </ul>
+            <div class="btn-group">
+                <div class="ico-btn-wrap">
+                    <a href="#none" class="ui basic icon button">
+                        <i class="ico-manual">manual</i>
+                    </a>
+                    <div class="fav-toggle-wrap">
+                        <input type="checkbox" id="fav" name="fav">
+                        <label class="ui basic icon button" for="fav">
+                            <i class="ico-fav"></i>
+                        </label>
+                    </div>
+                </div>
+                <div class="btn-wrap">
+                    <button class="ui primary button" id="popup-apply">요청</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="notice">
+            교육의 자주성·전문성·정치적 중립성 및 대학의 자율성은 법률이 정하는 바에 의하여 보장된다. 대법원과 각급법원의 조직은 법률로 정한다. 정부는 예산에 변경을 가할 필요가 있을 때에는
+            추가경정예산안을 편성하여 국회에 제출할 수 있다. 국군의 조직과 편성은 법률로 정한다. 각급 선거관리위원회는 선거인명부의 작성등 선거사무와 국민투표사무에 관하여 관계 행정기관에 필요한 지시를 할
+            수 있다.
+
+            언론·출판에 대한 허가나 검열과 집회·결사에 대한 허가는 인정되지 아니한다. 누구든지 체포 또는 구속을 당한 때에는 즉시 변호인의 조력을 받을 권리를 가진다. 다만, 형사피고인이 스스로 변호인을
+            구할 수 없을 때에는 법률이 정하는 바에 의하여 국가가 변호인을 붙인다. 모든 국민은 인간다운 생활을 할 권리를 가진다.
+        </div>
+
+        <form action="">
+
+            <div class="label-form-1">
+
+                <div class="row">
+                    <div class="column-wrap">
+                        <div class="label-column">
+                            <label for="form1">제보자</label>
+                        </div>
+                        <div class="contents-column">
+                            <div class="ui input default-with">
+                                <input type="text" value="홍길동 선임 (업무혁신담당 > 인프라팀)" readonly>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="column-wrap">
+                        <div class="label-column">
+                            <label for="form1">연락처</label>
+                        </div>
+                        <div class="contents-column">
+                            <div class="ui input default-with">
+                                <input type="text" value="82-010-0000-0000" readonly>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="column-wrap">
+                        <div class="label-column">
+                            <label for="form1">이메일</label>
+                        </div>
+                        <div class="contents-column">
+                            <div class="ui input default-with">
+                                <input type="text" value="gildong.hong@lge.com" readonly>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="column-wrap">
+                        <div class="label-column">
+                            <label for="form1">고발 위치</label>
+                        </div>
+                        <div class="contents-column">
+                            <select name="" class="ui dropdown">
+                                <option value="">사업장그룹</option>
+                                <option value="option1">사업장그룹1</option>
+                                <option value="option2">사업장그룹2</option>
+                                <option value="option2">사업장그룹3</option>
+                            </select>
+
+
+                            <select name="" class="ui dropdown">
+                                <option value="">사업장</option>
+                                <option value="option1">사업장1</option>
+                                <option value="option2">사업장2</option>
+                                <option value="option2">사업장3</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="column-wrap">
+                        <div class="label-column required">
+                            <label for="form1">제목</label>
+                        </div>
+                        <div class="contents-column">
+                            <div class="ui input w100p">
+                                <input type="text" placeholder="제목 입력">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="label-column required">
+                        <label for="form1">내용</label>
+                    </div>
+                    <div class="contents-column">
+                        <div class="ui form w100p">
+                            <textarea name="" id="" placeholder="내용 입력"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="label-column">
+                        <label for="">파일 첨부</label>
+                    </div>
+                    <div class="contents-column column">
+                        <!-- 폼 요소 들어가는 부분 -->
+                        <div class="file-wrap">
+                            <div class="ui action input default-with">
+                                <input type="text" placeholder="파일명" readonly>
+                                <input type="file">
+                                <div class="ui icon button">
+                                    파일찾기
+                                </div>
+                            </div>
+                            <a href="#none" class="ui basic icon button">
+                                <i class="ico-plus">test</i>
+                            </a>
+                        </div>
+
+                        <div class="file-wrap">
+                            <div class="ui action input default-with">
+                                <input type="text" placeholder="파일명" readonly>
+                                <input type="file">
+                                <div class="ui icon button">
+                                    파일찾기
+                                </div>
+                            </div>
+                            <a href="#none" class="ui basic icon button">
+                                <i class="ico-plus">test</i>
+                            </a>
+                            <a href="#none" class="ui basic icon button">
+                                <i class="ico-minus">test</i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="label-column">
+                        <label for="form1">관계</label>
+                    </div>
+                    <div class="contents-column column">
+
+                        <select name="" class="ui dropdown">
+                            <option value="">선택</option>
+                            <option value="option1">현임직원</option>
+                            <option value="option2">전임직원</option>
+                            <option value="option2">협력업체</option>
+                            <option value="option2">기타</option>
+                        </select>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="label-column"></div>
+                    <div class="contents-column column">
+                        <div class="auth-wrap">
+                            <div>
+                                <div class="row multi gap64">
+                                    <div class="column-wrap">
+                                        <div class="label-column">
+                                            <label for="form1">부서</label>
+                                        </div>
+                                        <div class="content-column">
+                                            <div class="ui input default-with">
+                                                <input type="text" placeholder="부서명 입력">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="column-wrap">
+                                        <div class="label-column">
+                                            <label for="form1">연락처</label>
+                                        </div>
+                                        <div class="content-column">
+                                            <div class="ui input default-with">
+                                                <input type="text" placeholder="연락처 입력">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row multi gap64">
+                                    <div class="column-wrap">
+                                        <div class="label-column">
+                                            <label for="form1">이름</label>
+                                        </div>
+                                        <div class="content-column">
+                                            <div class="ui input default-with">
+                                                <input type="text" placeholder="이름 입력">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="column-wrap">
+                                        <div class="label-column">
+                                            <label for="form1">이메일</label>
+                                        </div>
+                                        <div class="content-column">
+                                            <div class="ui input default-with">
+                                                <input type="text" placeholder="이메일 입력">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="display: flex; gap: 10px;">
+                                <a href="#none" class="ui basic icon button">
+                                    <i class="ico-plus">test</i>
+                                </a>
+                                <a href="#none" class="ui basic icon button">
+                                    <i class="ico-minus">test</i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="auth-wrap">
+                            <div>
+                                <div class="row multi gap64">
+                                    <div class="column-wrap">
+                                        <div class="label-column">
+                                            <label for="form1">부서</label>
+                                        </div>
+                                        <div class="content-column">
+                                            <div class="ui input default-with">
+                                                <input type="text" placeholder="부서명 입력">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="column-wrap">
+                                        <div class="label-column">
+                                            <label for="form1">연락처</label>
+                                        </div>
+                                        <div class="content-column">
+                                            <div class="ui input default-with">
+                                                <input type="text" placeholder="연락처 입력">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row multi gap64">
+                                    <div class="column-wrap">
+                                        <div class="label-column">
+                                            <label for="form1">이름</label>
+                                        </div>
+                                        <div class="content-column">
+                                            <div class="ui input default-with">
+                                                <input type="text" placeholder="이름 입력">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="column-wrap">
+                                        <div class="label-column">
+                                            <label for="form1">이메일</label>
+                                        </div>
+                                        <div class="content-column">
+                                            <div class="ui input default-with">
+                                                <input type="text" placeholder="이메일 입력">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="display: flex; gap: 10px;">
+                                <a href="#none" class="ui basic icon button">
+                                    <i class="ico-plus">test</i>
+                                </a>
+                                <a href="#none" class="ui basic icon button">
+                                    <i class="ico-minus">test</i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </form>
+
+    </div>
+
+    <script>
+        $('.dropdown').dropdown();
+
+        $('#rangestart').calendar({
+            type: 'date',
+            endCalendar: $('#rangeend'),
+            formatter: {
+                date: function (date, settings) {
+                    if (!date) return '';
+                    var day = date.getDate();
+                    var month = date.getMonth() + 1;
+                    var year = date.getFullYear();
+                    return year + '-' + month + '-' + day;
+                }
+            }
+        });
+        $('#rangeend').calendar({
+            type: 'date',
+            startCalendar: $('#rangestart'),
+            formatter: {
+                date: function (date, settings) {
+                    if (!date) return '';
+                    var day = date.getDate();
+                    var month = date.getMonth() + 1;
+                    var year = date.getFullYear();
+                    return year + '-' + month + '-' + day;
+                }
+            }
+        });
+
+        $("input:text").click(function () {
+            $(this).parent().find("input:file").click();
+        });
+
+        $("input:file + .button").click(function () {
+            $(this).parent().find("input:file").click();
+        });
+
+        $('input:file', '.ui.action.input')
+            .on('change', function (e) {
+                var name = e.target.files[0].name;
+                $('input:text', $(e.target).parent()).val(name);
+            });
+    </script>
+
+</body>
+
+</html>

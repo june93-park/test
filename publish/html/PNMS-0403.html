@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>모바일온 예외정책</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.css"
+        integrity="sha512-rVfXYRlhHtd3C4PzoBxSaKhI/uYEi0/5K69RwK/cdxQld57PC6mZ7tkutR+KD96WrXZ6E/96qYeY4CVun7a0/w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="../resources/semantic/semantic.css" />
+    <link rel="stylesheet" href="../resources/css/layout.css" />
+    <link rel="stylesheet" href="../resources/css/contents.css" />
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="../resources/semantic/semantic.js"></script>
+    <script src="../resources/js/sticky.js"></script>
+    <!-- sortable 관련 jquery ui 추가 -->
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"
+        integrity="sha256-eTyxS0rkjpLEo16uXTS0uVCS4815lc40K2iVpWDvdSY=" crossorigin="anonymous"></script>
+</head>
+
+<body class="iframe-contents">
+    <div class="lg-contents size14">
+
+        <div class="ui pointing secondary menu">
+            <a class="item">정책신청</a>
+            <a class="item active">삭제신청</a>
+        </div>
+
+        <div class="path-wrap">
+            <ul class="path">
+                <li>PC/모바일보안</li>
+                <li>MobileON</li>
+                <li>정책신청</li>
+            </ul>
+            <div class="btn-group">
+                <div class="ico-btn-wrap">
+                    <a href="#none" class="ui basic icon button">
+                        <i class="ico-manual">manual</i>
+                    </a>
+                    <div class="fav-toggle-wrap">
+                        <input type="checkbox" id="fav" name="fav">
+                        <label class="ui basic icon button" for="fav">
+                            <i class="ico-fav"></i>
+                        </label>
+                    </div>
+                </div>
+                <div class="btn-wrap">
+                    <button class="ui primary button">요청</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="notice">
+            교육의 자주성·전문성·정치적 중립성 및 대학의 자율성은 법률이 정하는 바에 의하여 보장된다. 대법원과 각급법원의 조직은 법률로 정한다. 정부는 예산에 변경을 가할 필요가 있을 때에는
+            추가경정예산안을 편성하여 국회에 제출할 수 있다. 국군의 조직과 편성은 법률로 정한다. 각급 선거관리위원회는 선거인명부의 작성등 선거사무와 국민투표사무에 관하여 관계 행정기관에 필요한 지시를 할
+            수 있다.
+
+            언론·출판에 대한 허가나 검열과 집회·결사에 대한 허가는 인정되지 아니한다. 누구든지 체포 또는 구속을 당한 때에는 즉시 변호인의 조력을 받을 권리를 가진다. 다만, 형사피고인이 스스로 변호인을
+            구할 수 없을 때에는 법률이 정하는 바에 의하여 국가가 변호인을 붙인다. 모든 국민은 인간다운 생활을 할 권리를 가진다.
+        </div>
+
+        <form action="">
+
+            <div class="label-form-1">
+
+                <div class="row">
+                    <div class="column-wrap">
+                        <div class="label-column">
+                            <label for="">신청자</label>
+                        </div>
+                        <div class="contents-column column">
+                            <div class="ui input default-with">
+                                <input type="text" value="홍길동 선임 (업무혁신담당 > 인프라팀)" readonly>
+                            </div>
+                            <table class="ui celled table">
+                                <!-- 20220620 colgroup 추가 -->
+                                <colgroup>
+                                    <col width="60">
+                                    <col width="">
+                                    <col width="">
+                                    <col width="">
+                                    <col width="">
+                                </colgroup>
+                                <!-- // -->
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            <div class="ui fitted checkbox">
+                                                <input type="checkbox" name="check-all" id="check-all">
+                                                <label for="check-all"></label>
+                                            </div>
+                                        </th>
+                                        <th>휴대폰 번호</th>
+                                        <th>모델명</th>
+                                        <th>OS</th>
+                                        <th>상태</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="center aligned">
+                                            <div class="ui fitted checkbox">
+                                                <input type="checkbox" name="check-1" id="check-1">
+                                                <label for="check-1"></label>
+                                            </div>
+                                        </td>
+                                        <td class="center aligned">010-1234-1234</td>
+                                        <td class="center aligned">아이폰 13</td>
+                                        <td class="center aligned">IOS</td>
+                                        <td class="center aligned">설치완료</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center aligned">
+                                            <div class="ui fitted checkbox">
+                                                <input type="checkbox" name="check-2" id="check-2">
+                                                <label for="check-2"></label>
+                                            </div>
+                                        </td>
+                                        <td class="center aligned">010-1234-1234</td>
+                                        <td class="center aligned">아이폰 13</td>
+                                        <td class="center aligned">IOS</td>
+                                        <td class="center aligned">미설치</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="column-wrap">
+                        <div class="label-column required">
+                            <label for="">신청 사유</label>
+                        </div>
+                        <div class="contents-column">
+                            <div class="ui form w100p">
+                                <textarea name="" id="" placeholder="신청 사유를 상세히 입력해주세요."></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="column-wrap">
+                        <div class="label-column">
+                            <label for="">결재자</label>
+                        </div>
+                        <!-- 드래그앤 드랍이 필요한 경우 sortable 클래스 추가 -->
+                        <div class="contents-column column sortable">
+                            <div class="auth-wrap">
+                                <a href="#none" class="ui basic icon button">
+                                    <i class="ico-align">test</i>
+                                </a>
+                                <div class="ui action input default-with">
+                                    <input type="text" placeholder="홍길동 선임 (업무혁신담당 > 인프라팀)">
+                                    <div class="ui primary button">
+                                        검색
+                                    </div>
+                                </div>
+                                <select name="gender" class="ui dropdown">
+                                    <option value="">허용/동의</option>
+                                    <option value="option1">허용/동의1</option>
+                                    <option value="option2">허용/동의2</option>
+                                </select>
+                                <a href="#none" class="ui basic icon button">
+                                    <i class="ico-plus">test</i>
+                                </a>
+                                <a href="#none" class="ui basic icon button">
+                                    <i class="ico-minus">test</i>
+                                </a>
+                            </div>
+
+                            <div class="auth-wrap">
+                                <a href="#none" class="ui basic icon button">
+                                    <i class="ico-align">test</i>
+                                </a>
+                                <div class="ui action input default-with">
+                                    <input type="text" placeholder="홍길동 선임 (업무혁신담당 > 인프라팀)">
+                                    <div class="ui primary button">
+                                        검색
+                                    </div>
+                                </div>
+                                <select name="gender" class="ui dropdown">
+                                    <option value="">허용/동의</option>
+                                    <option value="option1">허용/동의1</option>
+                                    <option value="option2">허용/동의2</option>
+                                </select>
+                                <a href="#none" class="ui basic icon button">
+                                    <i class="ico-plus">test</i>
+                                </a>
+                                <a href="#none" class="ui basic icon button">
+                                    <i class="ico-minus">test</i>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="column-wrap">
+                        <div class="label-column">
+                            <label for="">참조자</label>
+                        </div>
+                        <!-- 드래그앤 드랍이 필요한 경우 sortable 클래스 추가 -->
+                        <div class="contents-column column">
+
+                            <div class="auth-wrap">
+                                <a href="#none" class="ui basic icon button">
+                                    <i class="ico-align">test</i>
+                                </a>
+                                <div class="ui action input default-with">
+                                    <input type="text" placeholder="홍길동 선임 (업무혁신담당 > 인프라팀)">
+                                    <div class="ui primary button">
+                                        검색
+                                    </div>
+                                </div>
+                                <div class="empty-select"></div>
+                                <a href="#none" class="ui basic icon button">
+                                    <i class="ico-plus">test</i>
+                                </a>
+                                <a href="#none" class="ui basic icon button">
+                                    <i class="ico-minus">test</i>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="column-wrap">
+                        <div class="label-column required">
+                            <label for="">서약사항</label>
+                        </div>
+                        <div class="contents-column column">
+
+                            <div class="agree-text">
+                                교육의 자주성·전문성·정치적 중립성 및 대학의 자율성은 법률이 정하는 바에 의하여 보장된다. 대법원과 각급법원의 조직은 법률로 정한다. 정부는 예산에 변경을
+                                가할
+                                필요가 있을 때에는 추가경정예산안을 편성하여 국회에 제출할 수 있다. 국군의 조직과 편성은 법률로 정한다. 각급 선거관리위원회는 선거인명부의 작성등 선거사무와
+                                국민투표사무에 관하여 관계 행정기관에 필요한 지시를 할 수 있다.
+
+                                언론·출판에 대한 허가나 검열과 집회·결사에 대한 허가는 인정되지 아니한다. 누구든지 체포 또는 구속을 당한 때에는 즉시 변호인의 조력을 받을 권리를 가진다.
+                                다만,
+                                형사피고인이 스스로 변호인을 구할 수 없을 때에는 법률이 정하는 바에 의하여 국가가 변호인을 붙인다. 모든 국민은 인간다운 생활을 할 권리를 가진다.
+                            </div>
+                            <div class="ui checkbox">
+                                <input type="checkbox" name="agree" id="agree">
+                                <label for="agree">서약사항에 동의합니다.</label>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </form>
+
+    </div>
+
+
+    <!--popup-->
+
+    <script>
+        $('.dropdown').dropdown();
+
+        $('#rangestart').calendar({
+            type: 'date',
+            endCalendar: $('#rangeend'),
+            formatter: {
+                date: function (date, settings) {
+                    if (!date) return '';
+                    var day = date.getDate();
+                    var month = date.getMonth() + 1;
+                    var year = date.getFullYear();
+                    return year + '-' + month + '-' + day;
+                }
+            }
+        });
+        $('#rangeend').calendar({
+            type: 'date',
+            startCalendar: $('#rangestart'),
+            formatter: {
+                date: function (date, settings) {
+                    if (!date) return '';
+                    var day = date.getDate();
+                    var month = date.getMonth() + 1;
+                    var year = date.getFullYear();
+                    return year + '-' + month + '-' + day;
+                }
+            }
+        });
+    </script>
+
+</body>
+
+</html>

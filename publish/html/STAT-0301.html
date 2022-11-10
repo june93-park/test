@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>바코드 발급</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.css"
+        integrity="sha512-rVfXYRlhHtd3C4PzoBxSaKhI/uYEi0/5K69RwK/cdxQld57PC6mZ7tkutR+KD96WrXZ6E/96qYeY4CVun7a0/w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="../resources/semantic/semantic.css" />
+    <link rel="stylesheet" href="../resources/css/layout.css" />
+    <link rel="stylesheet" href="../resources/css/contents.css" />
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="../resources/semantic/semantic.js"></script>
+    <script src="../resources/js/sticky.js"></script>
+
+    <!-- 데이터 테이블 사용 화면에서만 사용하는 css / js -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/dataTables.semanticui.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.semanticui.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/select/1.3.4/css/select.semanticui.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/datetime/1.1.2/css/dataTables.dateTime.min.css" />
+    <link rel="stylesheet" type="text/css" href="../resources/semantic/editor.semanticui.min.css" />
+
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/dataTables.semanticui.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.semanticui.min.js"></script>
+    <script src="https://cdn.datatables.net/select/1.3.4/js/dataTables.select.min.js"></script>
+    <script src="https://cdn.datatables.net/datetime/1.1.2/js/dataTables.dateTime.min.js"></script>
+
+
+
+</head>
+
+<body class="iframe-contents">
+    <div class="lg-contents size14">
+
+        <div class="ui pointing secondary menu">
+            <a class="item active">반출입</a>
+        </div>
+
+        <div class="path-wrap">
+            <ul class="path">
+                <li>현황조회</li>
+                <li>반출입</li>
+            </ul>
+            <div class="btn-group">
+                <div class="ico-btn-wrap">
+                    <a href="#none" class="ui basic icon button">
+                        <i class="ico-manual">manual</i>
+                    </a>
+                    <div class="fav-toggle-wrap">
+                        <input type="checkbox" id="fav" name="fav">
+                        <label class="ui basic icon button" for="fav">
+                            <i class="ico-fav"></i>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="list-header">
+            <div class="search-group">
+
+                <div class="search-wrap">
+                    <label for="">기간</label>
+                    <div class="search-cont">
+
+                        <select name="" class="ui dropdown">
+                            <option value="">선택</option>
+                            <option value="option1">신청일</option>
+                            <option value="option2">반출일</option>
+                            <option value="option3">진행날짜</option>
+                        </select>
+
+                        <div class="from-to-date-picker">
+                            <div class="ui calendar" id="rangestart">
+                                <div class="ui input right icon">
+                                    <i class="calendar icon"></i>
+                                    <input type="text" placeholder="2022-04-12">
+                                </div>
+                            </div>
+                            <span>~</span>
+                            <div class="ui calendar" id="rangeend">
+                                <div class="ui input right icon">
+                                    <i class="calendar icon"></i>
+                                    <input type="text" placeholder="2022-04-12">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="search-wrap">
+                    <label for="">자산 유형</label>
+                    <div class="search-cont">
+                        <select name="" class="ui dropdown">
+                            <option value="">선택</option>
+                            <option value="option1">전체</option>
+                            <option value="option2">정보자산</option>
+                            <option value="option3">고정/일반자산</option>
+                            <option value="option4">문서자산</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="search-wrap">
+                    <label for="">Search by</label>
+                    <div class="search-cont">
+                        <select name="" class="ui dropdown">
+                            <option value="">선택</option>
+                            <option value="option1">전체</option>
+                            <option value="option2">신청 ID</option>
+                            <option value="option3">자산 ID</option>
+                            <option value="option4">대상자</option>
+                            <option value="option5">반출 목적지</option>
+                            <option value="option6">목적지수령인</option>
+                        </select>
+                        <div class="ui input default-with">
+                            <input type="text" placeholder="검색어를 입력하세요.">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="search-wrap">
+                    <label for="">직원 유형</label>
+                    <div class="search-cont">
+                        <!-- 폼 요소 들어가는 부분 -->
+                        <div class="btn-check-wrap">
+                            <input type="checkbox" id="chk1" name="chk1">
+                            <label class="ui basic button" for="chk1">재직자</label>
+                            <input type="checkbox" id="chk2" name="chk2">
+                            <label class="ui basic button" for="chk2">퇴직예정자</label>
+                            <input type="checkbox" id="chk3" name="chk3">
+                            <label class="ui basic button" for="chk3">퇴직자</label>
+                        </div>
+                        <!-- // -->
+                    </div>
+                </div>
+
+                <div class="search-wrap">
+                    <label for="">사업장그룹/사업장</label>
+                    <div class="search-cont">
+                        <select name="" class="ui dropdown">
+                            <option value="">선택</option>
+                            <option value="option1">사업장그룹1</option>
+                            <option value="option2">사업장그룹2</option>
+                            <option value="option3">사업장그룹3</option>
+                        </select>
+                        <select name="" class="ui dropdown">
+                            <option value="">선택</option>
+                            <option value="option1">사업장1</option>
+                            <option value="option2">사업장2</option>
+                            <option value="option3">사업장3</option>
+                        </select>
+                        <div class="ui form">
+                            <div class="inline fields">
+                                <div class="field">
+                                    <div class="ui checkbox">
+                                        <input type="checkbox" name="chk2" id="chk2">
+                                        <label for="chk2">미환입</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="btn-group">
+                <div class="btn-wrap">
+                    <button class="ui primary button">검색</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="ui right aligned grid">
+            <div class="right floated right aligned ten wide column" id="table-search">
+                <a href="#none" class="ui gray button" id="popup-view">반출입 자산 이관</a>
+                <button class="ui gray button">엑셀 다운로드(미환입)</button>
+                <button class="ui gray button">엑셀 다운로드</button>
+            </div>
+        </div>
+
+        <div class="list-container">
+            <div class="ui grid">
+                <div class="eight wide column">
+                    <!-- 배경색은 tr 에 bg-red 혹은 bg-ylw 클래스를 추가하시면 됩니다 -->
+                    <table id="example1" class="ui celled table" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th>First name</th>
+                                <th>Last name</th>
+                                <th>Phone #</th>
+                                <th>Location</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div class="eight wide column">
+                    <!-- 배경색은 tr 에 bg-red 혹은 bg-ylw 클래스를 추가하시면 됩니다 -->
+                    <table id="example2" class="ui celled table" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th>First name</th>
+                                <th>Last name</th>
+                                <th>Phone #</th>
+                                <th>Location</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+    <!--popup-->
+
+
+    <div class="ui modal" id="popup-STAT-0301">
+        <i class="close icon"></i>
+        <div class="header">
+            반출입 자산 이관
+        </div>
+        <div class="scrolling content">
+
+            <div class="ui grid popup-search-2">
+                <div class="eight wide column">
+                    <label>이관자</label>
+                    <div class="popup-search-wrap w100p">
+                        <div class="ui action input w100p">
+                            <input type="text" placeholder="홍길동 선임 (업무혁신담당 > 인프라팀)">
+                            <div class="ui primary button" id="popup-sample">
+                                검색
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="eight wide column">
+                    <label>수신자</label>
+                    <div class="popup-search-wrap w100p">
+                        <div class="ui action input w100p">
+                            <input type="text" placeholder="홍길동 선임 (업무혁신담당 > 인프라팀)">
+                            <div class="ui primary button" id="popup-sample">
+                                검색
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="eight wide column">
+                    <label>자산수량</label>
+                    <div class="popup-search-wrap w100p">
+                        <div class="ui input w100p">
+                            <input type="text" placeholder="%N%">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui grid">
+                <div class="sixteen wide column">
+                    <div class="popup-table">
+                        <table id="example3" class="ui celled table" cellspacing="0" width="100%">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>신청자</th>
+                                    <th>SSO ID</th>
+                                    <th>직급</th>
+                                    <th>부서</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="actions">
+            <a href="#none" class="ui primary button">
+                전체이관
+            </a>
+            <a href="#none" class="ui primary button">
+                총 N건이관
+            </a>
+            <a href="#none" class="ui secondary button">
+                취소
+            </a>
+        </div>
+    </div>
+
+    <script>
+        $('#popup-view').on('click', function () {
+            $('#popup-STAT-0301').modal({
+                inverted: true
+            }).modal('show');
+        });
+
+        $('.dropdown').dropdown();
+
+        $('#rangestart').calendar({
+            type: 'date',
+            endCalendar: $('#rangeend'),
+            formatter: {
+                date: function (date, settings) {
+                    if (!date) return '';
+                    var day = date.getDate();
+                    var month = date.getMonth() + 1;
+                    var year = date.getFullYear();
+                    return year + '-' + month + '-' + day;
+                }
+            }
+        });
+        $('#rangeend').calendar({
+            type: 'date',
+            startCalendar: $('#rangestart'),
+            formatter: {
+                date: function (date, settings) {
+                    if (!date) return '';
+                    var day = date.getDate();
+                    var month = date.getMonth() + 1;
+                    var year = date.getFullYear();
+                    return year + '-' + month + '-' + day;
+                }
+            }
+        });
+
+
+
+        $(document).ready(function () {
+
+
+            //테이블
+            var leftTable1 = 'example1';
+            var leftTable2 = 'example2';
+            var leftTable3 = 'example3';
+
+
+            // 테이블 데이터
+            var table1 = $('#' + leftTable1).DataTable({
+                searching: false,
+                lengthChange: false,
+                scrollCollapse: true,
+                "pageLength": 50,
+                info: false,
+                ajax: {
+                    url: "./dummy/joinNested.php",
+                    type: 'get'
+                },
+                columns: [{
+                        data: "users.first_name"
+                    },
+                    {
+                        data: "users.last_name"
+                    },
+                    {
+                        data: "users.phone"
+                    },
+                    {
+                        data: "sites.name"
+                    }
+                ],
+                select: true,
+            });
+
+            // 테이블 데이터
+            var table2 = $('#' + leftTable2).DataTable({
+                searching: false,
+                lengthChange: false,
+                scrollCollapse: true,
+                "pageLength": 50,
+                info: false,
+                ajax: {
+                    url: "./dummy/joinNested.php",
+                    type: 'get'
+                },
+                columns: [{
+                        data: "users.first_name"
+                    },
+                    {
+                        data: "users.last_name"
+                    },
+                    {
+                        data: "users.phone"
+                    },
+                    {
+                        data: "sites.name"
+                    }
+                ],
+                select: true,
+            });
+
+            // 테이블 데이터
+            var table3 = $('#' + leftTable3).DataTable({
+                searching: false,
+                lengthChange: false,
+                scrollCollapse: true,
+                "pageLength": 50,
+                info: false,
+                ajax: {
+                    url: "./dummy/joinNested.php",
+                    type: 'get'
+                },
+                columns: [{
+                        data: "users.first_name"
+                    },
+                    {
+                        data: "users.last_name"
+                    },
+                    {
+                        data: "users.phone"
+                    },
+                    {
+                        data: "sites.name"
+                    }
+                ],
+                select: true,
+            });
+
+
+            table1.buttons().container().appendTo($('div.eight.column:eq(0)', table.table().container()));
+            table2.buttons().container().appendTo($('div.eight.column:eq(0)', table.table().container()));
+            table3.buttons().container().appendTo($('div.eight.column:eq(0)', table.table().container()));
+
+
+
+        });
+    </script>
+
+</body>
+
+</html>

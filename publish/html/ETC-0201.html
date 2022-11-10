@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>비정형품의</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.css"
+        integrity="sha512-rVfXYRlhHtd3C4PzoBxSaKhI/uYEi0/5K69RwK/cdxQld57PC6mZ7tkutR+KD96WrXZ6E/96qYeY4CVun7a0/w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="../resources/semantic/semantic.css" />
+    <link rel="stylesheet" href="../resources/css/layout.css" />
+    <link rel="stylesheet" href="../resources/css/contents.css" />
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="../resources/semantic/semantic.js"></script>
+    <script src="../resources/js/sticky.js"></script>
+
+    <!-- 데이터 테이블 사용 화면에서만 사용하는 css / js -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/dataTables.semanticui.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.semanticui.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/select/1.3.4/css/select.semanticui.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/datetime/1.1.2/css/dataTables.dateTime.min.css" />
+    <link rel="stylesheet" type="text/css" href="../resources/semantic/editor.semanticui.min.css" />
+
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/dataTables.semanticui.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.semanticui.min.js"></script>
+    <script src="https://cdn.datatables.net/select/1.3.4/js/dataTables.select.min.js"></script>
+    <script src="https://cdn.datatables.net/datetime/1.1.2/js/dataTables.dateTime.min.js"></script>
+
+</head>
+
+<body class="iframe-contents">
+    <div class="lg-contents size14">
+
+        <div class="ui pointing secondary menu">
+            <a class="item active">비정형품의</a>
+        </div>
+
+        <div class="path-wrap">
+            <ul class="path">
+                <li>ETC</li>
+                <li>비정형품의</li>
+            </ul>
+            <div class="btn-group">
+                <div class="ico-btn-wrap">
+                    <a href="#none" class="ui basic icon button">
+                        <i class="ico-manual">manual</i>
+                    </a>
+                    <div class="fav-toggle-wrap">
+                        <input type="checkbox" id="fav" name="fav">
+                        <label class="ui basic icon button" for="fav">
+                            <i class="ico-fav"></i>
+                        </label>
+                    </div>
+                </div>
+                <div class="btn-wrap">
+                    <button class="ui primary button">임시저장</button>
+                    <button class="ui primary button">요청</button>
+                    <button class="ui primary button">취소</button>
+                </div>
+            </div>
+        </div>
+
+
+        <form action="">
+
+            <div class="label-form-1">
+
+                <div class="row">
+                    <div class="column-wrap">
+                        <div class="label-column">
+                            <label for="form1">신청자</label>
+                        </div>
+                        <div class="contents-column">
+                            <div class="ui input default-with">
+                                <input type="text" value="홍길동 선임 (업무혁신담당 > 인프라팀)" readonly>
+                            </div>
+                            <a href="#none" id="popup-select-form" class="ui primary button mgl10">
+                                양식 선택
+                            </a>
+                            <a href="#none" id="popup-save-list" class="ui primary button mgl10">
+                                임시저장 목록
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="column-wrap">
+                        <div class="label-column required">
+                            <label for="form1">제목</label>
+                        </div>
+                        <div class="contents-column">
+                            <div class="ui input w100p">
+                                <input type="text" value="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="label-column">
+                    </div>
+                    <div class="contents-column">
+                        <div class="ui form w100p">
+                            <textarea name="" id="" placeholder=""></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="label-column">
+                        <label for="form1">결재자</label>
+                    </div>
+                    <div class="contents-column column">
+
+                        <div class="auth-wrap">
+                            <a href="#none" class="ui basic icon button">
+                                <i class="ico-align">test</i>
+                            </a>
+                            <div class="ui action input default-with">
+                                <input type="text" placeholder="홍길동 선임 (업무혁신담당 > 인프라팀)">
+                                <div class="ui primary button">
+                                    검색
+                                </div>
+                            </div>
+                            <select name="gender" class="ui dropdown">
+                                <option value="">허용/동의</option>
+                                <option value="option1">허용/동의1</option>
+                                <option value="option2">허용/동의2</option>
+                            </select>
+                            <a href="#none" class="ui basic icon button">
+                                <i class="ico-plus">test</i>
+                            </a>
+                            <a href="#none" class="ui basic icon button">
+                                <i class="ico-minus">test</i>
+                            </a>
+                        </div>
+
+                        <div class="auth-wrap">
+                            <a href="#none" class="ui basic icon button">
+                                <i class="ico-align">test</i>
+                            </a>
+                            <div class="ui action input default-with">
+                                <input type="text" placeholder="홍길동 선임 (업무혁신담당 > 인프라팀)">
+                                <div class="ui primary button">
+                                    검색
+                                </div>
+                            </div>
+                            <select name="gender" class="ui dropdown">
+                                <option value="">허용/동의</option>
+                                <option value="option1">허용/동의1</option>
+                                <option value="option2">허용/동의2</option>
+                            </select>
+                            <a href="#none" class="ui basic icon button">
+                                <i class="ico-plus">test</i>
+                            </a>
+                            <a href="#none" class="ui basic icon button">
+                                <i class="ico-minus">test</i>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="label-column">
+                        <label for="form1">참조자</label>
+                    </div>
+                    <div class="contents-column column">
+
+                        <div class="auth-wrap">
+                            <a href="#none" class="ui basic icon button">
+                                <i class="ico-align">test</i>
+                            </a>
+                            <div class="ui action input default-with">
+                                <input type="text" placeholder="홍길동 선임 (업무혁신담당 > 인프라팀)">
+                                <div class="ui primary button">
+                                    검색
+                                </div>
+                            </div>
+                            <div class="empty-select"></div>
+                            <a href="#none" class="ui basic icon button">
+                                <i class="ico-plus">test</i>
+                            </a>
+                            <a href="#none" class="ui basic icon button">
+                                <i class="ico-minus">test</i>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </form>
+    </div>
+
+    <!-- popup -->
+
+
+    <div class="ui modal large" id="popup-new-form-view">
+        <i class="close icon"></i>
+        <div class="header">
+            신규 양식
+        </div>
+        <div class="scrolling content">
+            <div class="label-form-1">
+                <div class="row">
+                    <div class="column-wrap">
+                        <div class="label-column">
+                            <label for="">신청자</label>
+                        </div>
+                        <div class="contents-column">
+                            <div class="ui input w100p">
+                                <input type="text" value="홍길동 선임 (업무혁신담당 > 인프라팀)" readonly>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column-wrap">
+                        <!-- 필수항목이 아닐경우 클래스명에 required 삭제 -->
+                        <div class="label-column required">
+                            <label for="form1">제목</label>
+                        </div>
+                        <div class="contents-column">
+                            <!-- 폼 요소 들어가는 부분 -->
+                            <div class="ui input w100p">
+                                <input type="text" placeholder="제목을 입력해주세요.">
+                            </div>
+                            <!-- // -->
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column-wrap">
+                        <!-- 필수항목이 아닐경우 클래스명에 required 삭제 -->
+                        <div class="label-column required">
+                            <label for="form1">내용</label>
+                        </div>
+                        <div class="contents-column">
+                            <!-- 폼 요소 들어가는 부분 -->
+                            <div class="ui form w100p">
+                                <textarea name="" id="" placeholder="내용을 입력해주세요."></textarea>
+                            </div>
+                            <!-- // -->
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column-wrap">
+                        <!-- 필수항목이 아닐경우 클래스명에 required 삭제 -->
+                        <div class="label-column">
+                            <label for="form1">파일 첨부</label>
+                        </div>
+                        <div class="contents-column column">
+                            <!-- 폼 요소 들어가는 부분 -->
+                            <div class="file-wrap">
+                                <div class="ui action input default-with">
+                                    <input type="text" placeholder="파일명" readonly>
+                                    <input type="file">
+                                    <div class="ui icon button">
+                                        파일찾기
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="column-wrap">
+                        <!-- 필수항목이 아닐경우 클래스명에 required 삭제 -->
+                        <div class="label-column">
+                            <label for="">결재선</label>
+                        </div>
+                        <div class="contents-column column">
+                            <select name="" class="ui dropdown">
+                                <option value="">선택</option>
+                                <option value="option1">일반 결재</option>
+                                <option value="option2">임원 결재</option>
+                                <option value="option3">보안 담당자 결재</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="column-wrap">
+                        <!-- 필수항목이 아닐경우 클래스명에 required 삭제 -->
+                        <div class="label-column">
+                            <label for="">참조자</label>
+                        </div>
+                        <div class="contents-column column">
+                            <div class="auth-wrap">
+                                <a href="#none" class="ui basic icon button">
+                                    <i class="ico-align">test</i>
+                                </a>
+                                <div class="ui action input default-with">
+                                    <input type="text" placeholder="홍길동 선임 (업무혁신담당 > 인프라팀)">
+                                    <div class="ui primary button">
+                                        검색
+                                    </div>
+                                </div>
+                                <a href="#none" class="ui basic icon button">
+                                    <i class="ico-plus">test</i>
+                                </a>
+                                <a href="#none" class="ui basic icon button">
+                                    <i class="ico-minus">test</i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="actions">
+            <a href="#none" class="ui primary button">
+                저장
+            </a>
+            <a href="#none" class="ui basic button">
+                취소
+            </a>
+        </div>
+    </div>
+
+    <div class="ui modal large" id="popup-select-form-view">
+        <i class="close icon"></i>
+        <div class="header">
+            양식 선택
+        </div>
+        <div class="scrolling content">
+            <div class="list-header">
+                <div class="search-group">
+                    <div class="search-wrap">
+                        <label for=''>사업장그룹/사업장</label>
+                        <div class="search-cont">
+                            <select name="gender" class="ui dropdown">
+                                <option value=''>사업장 이름</option>
+                                <option value="option1">사업장 이름1</option>
+                                <option value="option2">사업장 이름2</option>
+                            </select>
+                            <select name="gender" class="ui dropdown">
+                                <option value=''>사업장 이름</option>
+                                <option value="option1">사업장 이름1</option>
+                                <option value="option2">사업장 이름2</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="search-wrap">
+                        <label for="">Search by</label>
+                        <div class="search-cont">
+                            <select name="" class="ui dropdown">
+                                <option value="">선택</option>
+                                <option value="option1">전체</option>
+                                <option value="option2">신청자</option>
+                                <option value="option3">대상자</option>
+                                <option value="option4">사번</option>
+                            </select>
+                            <div class="ui input default-with">
+                                <input type="text" placeholder="검색어를 입력하세요.">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-group">
+                    <div class="btn-wrap">
+                        <button class="ui primary button">검색</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ui right aligned grid">
+                <div class="six wide column left aligned">
+                    <button class="ui primary button" id="popup-new-form">신규양식</button>
+                </div>
+                <div class="right floated right aligned ten wide column" id="table-search">
+                    <button class="ui primary button">적용</button>
+                    <button class="ui gray button">수정</button>
+                    <button class="ui gray button">삭제</button>
+                </div>
+            </div>
+
+
+                <div class="ui grid" style="margin-top:0">
+                    <div class="sixteen wide column">
+                        <!-- 배경색은 tr 에 bg-red 혹은 bg-ylw 클래스를 추가하시면 됩니다 -->
+                        <table id="example1" class="ui celled table" cellspacing="0" width="100%"></table>
+                    </div>
+                </div>
+
+
+            
+
+        </div>
+    </div>
+
+    <div class="ui modal large" id="popup-save-list-view">
+        <i class="close icon"></i>
+        <div class="header">
+            임시저장 목록
+        </div>
+        <div class="scrolling content">
+            <table id="example2" class="ui celled table" cellspacing="0" width="100%"></table>
+        </div>
+    </div>
+
+
+    <script>
+        $('#popup-new-form').on('click', function () {
+            $('#popup-new-form-view').modal({
+                inverted: true
+            }).modal('show');
+        });
+
+        $('#popup-select-form').on('click', function () {
+            $('#popup-select-form-view').modal({
+                inverted: true
+            }).modal('show');
+        });
+
+        $('#popup-save-list').on('click', function () {
+            $('#popup-save-list-view').modal({
+                inverted: true
+            }).modal('show');
+        });
+
+
+        $('.dropdown').dropdown();
+
+        $(document).ready(function () {
+
+
+            // 왼쪽 메인 테이블
+            var leftTable1 = 'example1';
+
+
+            // 왼쪽 메인 테이블 데이터
+            var table1 = $('#' + leftTable1).DataTable({
+                searching: false,
+                lengthChange: false,
+                scrollCollapse: true,
+                "pageLength": 50,
+                info: false,
+                ajax: {
+                    url: "./dummy/codeDetailExample.php",
+                    type: 'get'
+                },
+                columnDefs: [{
+                    searchable: false,
+                    orderable: false,
+                    targets: 0,
+                }, ],
+                order: [
+                    [1, 'asc']
+                ],
+                columns: [{
+                        data: null,
+                        className: 'center',
+                        title: '<div class="ui fitted checkbox">' +
+                            '<input type="checkbox" name="">' +
+                            '<label for=""></label>' + '</div>',
+                        render: function (data, type, row) {
+                            if (data == true) {
+                                return '<div class="ui fitted checkbox"><input type="checkbox" checked><label for=""></label></div>';
+                            } else {
+                                return '<div class="ui fitted checkbox"><input type="checkbox"><label for=""></label></div>';
+                            }
+                            return data;
+                        },
+                        width: 27
+                    },
+                    {
+                        data: 'code',
+                        title: '코드',
+                        width: 90
+                    },
+                    {
+                        data: 'codeName',
+                        title: '코드명',
+                    },
+                    {
+                        data: 'desc',
+                        title: '설명',
+                    },
+                    {
+                        data: 'remarks',
+                        className: 'center',
+                        title: 'Remarks',
+                        width: 70
+                    },
+                    {
+                        data: 'individ',
+                        className: 'center',
+                        title: '사용여부',
+                        width: 70
+                    }
+                ],
+                select: true,
+                "initComplete": function (settings, json) {
+
+                }
+            });
+
+            var popupTable = 'example2'
+
+            // 왼쪽 메인 테이블 데이터
+            var table = $('#' + popupTable).DataTable({
+                searching: false,
+                lengthChange: false,
+                scrollCollapse: true,
+                "pageLength": 50,
+                info: false,
+                ajax: {
+                    url: "./dummy/codeExample.php",
+                    type: 'get'
+                },
+                columnDefs: [{
+                    searchable: false,
+                    orderable: false,
+                    targets: 0,
+                }, ],
+                order: [
+                    [1, 'asc']
+                ],
+                columns: [{
+                        data: 'no',
+                        className: 'center',
+                        title: 'No.',
+                        width: 40
+                    },
+                    {
+                        data: 'categoryCode',
+                        title: '분류코드',
+                        width: 90
+                    },
+                    {
+                        data: 'categoryName',
+                        title: '분류명',
+                    },
+                    {
+                        data: 'individ',
+                        className: 'center',
+                        title: '사용여부',
+                        width: 70
+                    }
+                ],
+                select: true
+            });
+
+            table.on('order.dt search.dt', function () {
+                let i = 1;
+
+                table.cells(null, 0, {
+                    search: 'applied',
+                    order: 'applied'
+                }).every(function (cell) {
+                    this.data(i++);
+                });
+            }).draw();
+
+
+
+        });
+    </script>
+
+</body>
+
+</html>

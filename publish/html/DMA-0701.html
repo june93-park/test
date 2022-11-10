@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IP관리</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.css"
+        integrity="sha512-rVfXYRlhHtd3C4PzoBxSaKhI/uYEi0/5K69RwK/cdxQld57PC6mZ7tkutR+KD96WrXZ6E/96qYeY4CVun7a0/w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="../resources/semantic/semantic.css" />
+    <link rel="stylesheet" href="../resources/css/layout.css" />
+    <link rel="stylesheet" href="../resources/css/contents.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../resources/semantic/semantic.js"></script>
+    <script src="../resources/js/sticky.js"></script>
+
+    <!-- 데이터 테이블 사용 화면에서만 사용하는 css / js -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/dataTables.semanticui.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.semanticui.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/select/1.3.4/css/select.semanticui.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/datetime/1.1.2/css/dataTables.dateTime.min.css" />
+    <link rel="stylesheet" type="text/css" href="../resources/semantic/editor.semanticui.min.css" />
+
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/dataTables.semanticui.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.semanticui.min.js"></script>
+    <script src="https://cdn.datatables.net/select/1.3.4/js/dataTables.select.min.js"></script>
+    <script src="https://cdn.datatables.net/datetime/1.1.2/js/dataTables.dateTime.min.js"></script>
+    
+
+</head>
+
+<body class="iframe-contents">
+    <div class="lg-contents size14">
+
+        <div class="ui pointing secondary menu">
+            <a class="item active">IP관리</a>
+        </div>
+
+        <div class="path-wrap">
+            <ul class="path">
+                <li>사업장관리</li>
+                <li>IP관리</li>
+            </ul>
+            <div class="btn-group">
+                <div class="ico-btn-wrap">
+                    <a href="#none" class="ui basic icon button">
+                        <i class="ico-manual">manual</i>
+                    </a>
+                    <div class="fav-toggle-wrap">
+                        <input type="checkbox" id="fav" name="fav">
+                        <label class="ui basic icon button" for="fav">
+                            <i class="ico-fav"></i>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="list-container">
+            <div class="ui grid">
+                <div class="eight wide column">
+                    <div class="ui right aligned grid">
+                        <div class="six wide column left aligned">
+                            <div class="ui checkbox" style="padding: 11px 0px 10px;">
+                                <input type="checkbox" name="chk1" id="chk1">
+                                <label for="chk1">삭제된 IP List 포함</label>
+                            </div>
+                        </div>
+                        <div class="right floated right aligned ten wide column" id="table-search">
+                            <span>
+                                총 <span class="point-color red">2,454</span>건
+                            </span>
+                            <button class="ui gray button">선택 삭제</button>
+                            <button class="ui gray button">신규 생성</button>
+                            <button class="ui gray button">엑셀 다운로드</button>
+                        </div>
+                    </div>
+                    <table id="example" class="ui celled table" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th>First name</th>
+                                <th>Last name</th>
+                                <th>Phone #</th>
+                                <th>Location</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div id="max-height-div" class="eight wide column">
+                    <div class="ui grid right aligned">
+                        <div class="right floated right aligned sixteen wide column">
+                            <button class="ui primary button">저장</button>
+                        </div>
+                    </div>
+
+                    <div class="no-data">
+                        좌측 항목을 선택해주세요.
+                    </div>
+
+
+                    <form action="">
+                        <div class="label-form-2">
+
+                            <div class="row">
+                                <div class="label-column">
+                                    <label for="" class="">IP주소</label>
+                                </div>
+                                <div class="contents-column">
+                                    <div class="ui input w100p">
+                                        <input type="text" placeholder="IP주소를 입력하세요.">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label-column">
+                                    <label for="notice">상세내용</label>
+                                </div>
+                                <div class="contents-column">
+                                    <div class="ui input w100p">
+                                        <input type="text" placeholder="상세내용을 입력하세요.">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="label-column">
+                                    <label for="notice">마지막 작성자</label>
+                                </div>
+                                <div class="contents-column">
+                                    <div class="ui input w100p">
+                                        <input type="text" placeholder="작성자ID/작성자명/부서" readonly>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label-column">
+                                    <label for="notice">마지막 작성 날짜</label>
+                                </div>
+                                <div class="contents-column">
+                                    <div class="ui input w100p">
+                                        <input type="text" placeholder="2012-12-20 21:55:14" readonly>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label-column">
+                                    <label for="notice">작성자</label>
+                                </div>
+                                <div class="contents-column">
+                                    <div class="ui input w100p">
+                                        <input type="text" placeholder="작성자이메일/작성자명/LG CNS(트윈_강서_상암_SSQ)" readonly>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label-column">
+                                    <label for="notice">작성일</label>
+                                </div>
+                                <div class="contents-column">
+                                    <div class="ui input w100p">
+                                        <input type="text" placeholder="2012-12-20 11:07:02" readonly>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        $('.dropdown').dropdown();
+        $(document).ready(function () {
+
+
+            // 왼쪽 메인 테이블
+            var leftTable = 'example';
+
+
+            // 왼쪽 메인 테이블 데이터
+            var table = $('#'+leftTable).DataTable({
+                searching: false,
+                lengthChange: false,
+                scrollCollapse: true,
+                "pageLength": 50,
+                info: false,
+                ajax: {
+                    url: "./dummy/joinNested.php",
+                    type: 'get'
+                },
+                columns: [{
+                        data: "users.first_name"
+                    },
+                    {
+                        data: "users.last_name"
+                    },
+                    {
+                        data: "users.phone"
+                    },
+                    {
+                        data: "sites.name"
+                    }
+                ],
+                select: true,
+                "initComplete": function( settings, json ) {
+                    //테이블 데이터 불러온 다음에 추가
+                    var divMaxHeight = $('#max-height-div').outerHeight() - 16;
+                    $('#'+leftTable+'_wrapper .row.dt-table .wide.column').css({
+                        'max-height': divMaxHeight,
+                        'overflow-y': 'auto',
+                        'min-height': 'calc(100vh - 340px)'
+                    });
+                }
+            });
+
+            table.buttons().container().appendTo($('div.eight.column:eq(0)', table.table().container()));
+
+
+
+        });
+
+    </script>
+
+</body>
+
+</html>

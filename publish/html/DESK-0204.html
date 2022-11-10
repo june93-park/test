@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>바코드 발급</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.css"
+        integrity="sha512-rVfXYRlhHtd3C4PzoBxSaKhI/uYEi0/5K69RwK/cdxQld57PC6mZ7tkutR+KD96WrXZ6E/96qYeY4CVun7a0/w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="../resources/semantic/semantic.css" />
+    <link rel="stylesheet" href="../resources/css/layout.css" />
+    <link rel="stylesheet" href="../resources/css/contents.css" />
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="../resources/semantic/semantic.js"></script>
+    <script src="../resources/js/sticky.js"></script>
+
+    <!-- 데이터 테이블 사용 화면에서만 사용하는 css / js -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/dataTables.semanticui.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.semanticui.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/select/1.3.4/css/select.semanticui.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/datetime/1.1.2/css/dataTables.dateTime.min.css" />
+    <link rel="stylesheet" type="text/css" href="../resources/semantic/editor.semanticui.min.css" />
+
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/dataTables.semanticui.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.semanticui.min.js"></script>
+    <script src="https://cdn.datatables.net/select/1.3.4/js/dataTables.select.min.js"></script>
+    <script src="https://cdn.datatables.net/datetime/1.1.2/js/dataTables.dateTime.min.js"></script>
+    
+
+
+</head>
+
+<body class="iframe-contents">
+    <div class="lg-contents size14">
+
+        <div class="ui pointing secondary menu">
+            <a class="item">발급</a>
+            <a class="item">폐기</a>
+            <a class="item">생성</a>
+            <a class="item active">검색</a>
+        </div>
+
+        <div class="path-wrap">
+            <ul class="path">
+                <li>데스크</li>
+                <li>바코드</li>
+                <li>검색</li>
+            </ul>
+            <div class="btn-group">
+                <div class="ico-btn-wrap">
+                    <a href="#none" class="ui basic icon button">
+                        <i class="ico-manual">manual</i>
+                    </a>
+                    <div class="fav-toggle-wrap">
+                        <input type="checkbox" id="fav" name="fav">
+                        <label class="ui basic icon button" for="fav">
+                            <i class="ico-fav"></i>
+                        </label>
+                    </div>
+                </div>
+                <div class="btn-wrap">
+                    <button class="ui primary button" id="popup-apply">검색</button>
+                </div>
+            </div>
+        </div>
+
+        <form action="">
+
+            <div class="label-form-1">
+
+                <div class="row multi">
+                    <div class="column-wrap">
+                        <div class="label-column">
+                            <label for="form1">기간</label>
+                        </div>
+                        <div class="contents-column">
+                            
+                        <div class="from-to-date-picker">
+                            <div class="ui calendar" id="rangestart">
+                                <div class="ui input right icon">
+                                    <i class="calendar icon"></i>
+                                    <input type="text" placeholder="2022-04-12">
+                                </div>
+                            </div>
+                            <span>~</span>
+                            <div class="ui calendar" id="rangeend">
+                                <div class="ui input right icon">
+                                    <i class="calendar icon"></i>
+                                    <input type="text" placeholder="2022-04-12">
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="column-wrap">
+                        <div class="label-column">
+                            <label for="form1">사업장그룹/사업장</label>
+                        </div>
+                        <div class="contents-column">
+                            <select name="" class="ui dropdown">
+                                <option value="">신청 위치</option>
+                                <option value="option1">신청 위치1</option>
+                                <option value="option2">신청 위치2</option>
+                            </select>
+                            <select name="" class="ui dropdown">
+                                <option value="">신청 위치</option>
+                                <option value="option1">신청 위치1</option>
+                                <option value="option2">신청 위치2</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="row multi">
+                    <div class="column-wrap">
+                        <div class="label-column">
+                            <label for="form1">신청항목</label>
+                        </div>
+                        <div class="contents-column">
+                            <select name="" class="ui dropdown">
+                                <option value="">선택</option>
+                                <option value="option1">데스크탑</option>
+                                <option value="option2">노트북</option>
+                                <option value="option3">NAS</option>
+                                <option value="option4">공유기(AP)</option>
+                                <option value="option5">CD</option>
+                                <option value="option6">DVD</option>
+                                <option value="option7">HDD</option>
+                                <option value="option8">USB</option>
+                                <option value="option9">디지털카메라</option>
+                                <option value="option10">태블릿PC</option>
+                                <option value="option11">샘플폰</option>
+                                <option value="option12">서버장비</option>
+                                <option value="option13">네트워크장비</option>
+                                <option value="option14">기타</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="column-wrap">
+
+                        <div class="label-column">
+                            <label for="form1">OS</label>
+                        </div>
+                        <div class="contents-column">
+                            <select name="" class="ui dropdown">
+                                <option value="">선택</option>
+                                <option value="option1">Windows</option>
+                                <option value="option2">Linux</option>
+                                <option value="option2">Mac</option>
+                                <option value="option2">Unix</option>
+                                <option value="option2">Others</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row ">
+                    <div class="label-column">
+                        <label for="form1">검색 조건 설정</label>
+                    </div>
+                    <div class="contents-column column">
+                        <div class="search-group">
+
+                            <div class="search-wrap">
+                                <label for="">연도</label>
+                                <div class="search-cont">
+                                    <select name="" class="ui dropdown">
+                                        <option value="">전체</option>
+                                        <option value="option1">2022</option>
+                                        <option value="option2">2021</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="search-wrap">
+                                <label for="">사업장그룹/사업장</label>
+                                <div class="search-cont">
+                                    <select name="" class="ui dropdown">
+                                        <option value="">신청 위치</option>
+                                        <option value="option1">신청 위치1</option>
+                                        <option value="option2">신청 위치2</option>
+                                    </select>
+                                    <select name="" class="ui dropdown">
+                                        <option value="">신청 위치</option>
+                                        <option value="option1">신청 위치1</option>
+                                        <option value="option2">신청 위치2</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="search-wrap">
+                                <label for="">신청 항목</label>
+                                <div class="search-cont">
+                                    <select name="" class="ui dropdown">
+                                        <option value="">선택</option>
+                                        <option value="option1">데스크탑</option>
+                                        <option value="option2">노트북</option>
+                                        <option value="option3">NAS</option>
+                                        <option value="option4">공유기(AP)</option>
+                                        <option value="option5">CD</option>
+                                        <option value="option6">DVD</option>
+                                        <option value="option7">HDD</option>
+                                        <option value="option8">USB</option>
+                                        <option value="option9">디지털카메라</option>
+                                        <option value="option10">태블릿PC</option>
+                                        <option value="option11">샘플폰</option>
+                                        <option value="option12">서버장비</option>
+                                        <option value="option13">네트워크장비</option>
+                                        <option value="option14">기타</option>
+                                    </select>
+                                    <div class="btn-group">
+                                        <div class="btn-wrap">
+                                            <button class="ui primary button">검색</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                        
+                        <div class="btn-group">
+                            <div class="btn-wrap">
+                                <button class="ui gray button">엑셀 다운로드</button>
+                                <button class="ui gray button">폐기</button>
+                            </div>
+                        </div>
+
+                        <table id="example" class="ui celled table" cellspacing="0" width="100%">
+                            <thead>
+                                <tr>
+                                    <th>First name</th>
+                                    <th>Last name</th>
+                                    <th>Phone #</th>
+                                    <th>Location</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
+        </form>
+
+    </div>
+
+
+    <!--popup-->
+
+    <div class="ui modal" id="popup-sample-view">
+        <i class="close icon"></i>
+        <div class="header">
+            직원검색
+        </div>
+        <div class="scrolling content">
+            <div class="popup-search">
+                <div class="popup-search-wrap">
+                    <select name="" class="ui dropdown">
+                        <option value="">검색 조건</option>
+                        <option value="option1">SSO ID</option>
+                        <option value="option2">사번</option>
+                        <option value="option3">이름</option>
+                    </select>
+                </div>
+                <div class="popup-search-wrap w100p">
+                    <div class="ui action input w100p">
+                        <input type="text" placeholder="홍길동 선임 (업무혁신담당 > 인프라팀)">
+                        <div class="ui primary button" id="popup-sample">
+                            검색
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="popup-table">
+                <table class="ui celled table">
+                    <colgroup>
+                        <col width="40">
+                        <col width="160">
+                        <col width="160">
+                        <col width="160">
+                        <col width="160">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>신청자</th>
+                            <th>SSO ID</th>
+                            <th>직급</th>
+                            <th>부서</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="center aligned" data-label="check">
+                                <div class="ui fitted radio checkbox">
+                                    <input type="radio" name="user" id="user1">
+                                    <label for="user1"></label>
+                                </div>
+                            </td>
+                            <td class="center aligned" data-label="신청자">
+                                홍길동
+                            </td>
+                            <td class="center aligned" data-label="SSO ID">
+                                Gildong.Hong
+                            </td>
+                            <td class="center aligned" data-label="직급">
+                                선임연구원
+                            </td>
+                            <td class="center aligned" data-label="부서">
+                                인프라팀
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="center aligned" data-label="check">
+                                <div class="ui fitted radio checkbox">
+                                    <input type="radio" name="user" id="user2">
+                                    <label for="user2"></label>
+                                </div>
+                            </td>
+                            <td class="center aligned" data-label="신청자">
+                                홍길동
+                            </td>
+                            <td class="center aligned" data-label="SSO ID">
+                                Gildong.Hong
+                            </td>
+                            <td class="center aligned" data-label="직급">
+                                선임연구원
+                            </td>
+                            <td class="center aligned" data-label="부서">
+                                인프라팀
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="center aligned" data-label="check">
+                                <div class="ui fitted radio checkbox">
+                                    <input type="radio" name="user" id="user3">
+                                    <label for="user3"></label>
+                                </div>
+                            </td>
+                            <td class="center aligned" data-label="신청자">
+                                홍길동
+                            </td>
+                            <td class="center aligned" data-label="SSO ID">
+                                Gildong.Hong
+                            </td>
+                            <td class="center aligned" data-label="직급">
+                                선임연구원
+                            </td>
+                            <td class="center aligned" data-label="부서">
+                                인프라팀
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="center aligned" data-label="check">
+                                <div class="ui fitted radio checkbox">
+                                    <input type="radio" name="user" id="user4">
+                                    <label for="user4"></label>
+                                </div>
+                            </td>
+                            <td class="center aligned" data-label="신청자">
+                                홍길동
+                            </td>
+                            <td class="center aligned" data-label="SSO ID">
+                                Gildong.Hong
+                            </td>
+                            <td class="center aligned" data-label="직급">
+                                선임연구원
+                            </td>
+                            <td class="center aligned" data-label="부서">
+                                인프라팀
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="center aligned" data-label="check">
+                                <div class="ui fitted radio checkbox">
+                                    <input type="radio" name="user" id="user5">
+                                    <label for="user5"></label>
+                                </div>
+                            </td>
+                            <td class="center aligned" data-label="신청자">
+                                홍길동
+                            </td>
+                            <td class="center aligned" data-label="SSO ID">
+                                Gildong.Hong
+                            </td>
+                            <td class="center aligned" data-label="직급">
+                                선임연구원
+                            </td>
+                            <td class="center aligned" data-label="부서">
+                                인프라팀
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="center aligned" data-label="check">
+                                <div class="ui fitted radio checkbox">
+                                    <input type="radio" name="user" id="user6">
+                                    <label for="user6"></label>
+                                </div>
+                            </td>
+                            <td class="center aligned" data-label="신청자">
+                                홍길동
+                            </td>
+                            <td class="center aligned" data-label="SSO ID">
+                                Gildong.Hong
+                            </td>
+                            <td class="center aligned" data-label="직급">
+                                선임연구원
+                            </td>
+                            <td class="center aligned" data-label="부서">
+                                인프라팀
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="center aligned" data-label="check">
+                                <div class="ui fitted radio checkbox">
+                                    <input type="radio" name="user" id="user7">
+                                    <label for="user7"></label>
+                                </div>
+                            </td>
+                            <td class="center aligned" data-label="신청자">
+                                홍길동
+                            </td>
+                            <td class="center aligned" data-label="SSO ID">
+                                Gildong.Hong
+                            </td>
+                            <td class="center aligned" data-label="직급">
+                                선임연구원
+                            </td>
+                            <td class="center aligned" data-label="부서">
+                                인프라팀
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="center aligned" data-label="check">
+                                <div class="ui fitted radio checkbox">
+                                    <input type="radio" name="user" id="user8">
+                                    <label for="user8"></label>
+                                </div>
+                            </td>
+                            <td class="center aligned" data-label="신청자">
+                                홍길동
+                            </td>
+                            <td class="center aligned" data-label="SSO ID">
+                                Gildong.Hong
+                            </td>
+                            <td class="center aligned" data-label="직급">
+                                선임연구원
+                            </td>
+                            <td class="center aligned" data-label="부서">
+                                인프라팀
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="center aligned" data-label="check">
+                                <div class="ui fitted radio checkbox">
+                                    <input type="radio" name="user" id="user9">
+                                    <label for="user9"></label>
+                                </div>
+                            </td>
+                            <td class="center aligned" data-label="신청자">
+                                홍길동
+                            </td>
+                            <td class="center aligned" data-label="SSO ID">
+                                Gildong.Hong
+                            </td>
+                            <td class="center aligned" data-label="직급">
+                                선임연구원
+                            </td>
+                            <td class="center aligned" data-label="부서">
+                                인프라팀
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="center aligned" data-label="check">
+                                <div class="ui fitted radio checkbox">
+                                    <input type="radio" name="user" id="user10">
+                                    <label for="user10"></label>
+                                </div>
+                            </td>
+                            <td class="center aligned" data-label="신청자">
+                                홍길동
+                            </td>
+                            <td class="center aligned" data-label="SSO ID">
+                                Gildong.Hong
+                            </td>
+                            <td class="center aligned" data-label="직급">
+                                선임연구원
+                            </td>
+                            <td class="center aligned" data-label="부서">
+                                인프라팀
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="pagination-wrap">
+                <div class="ui pagination menu">
+                    <a class="item">
+                        &lt;
+                    </a>
+                    <a class="item ltsp">
+                        &lt;&lt;
+                    </a>
+                    <a class="item active">
+                        1
+                    </a>
+                    <a class="item">
+                        2
+                    </a>
+                    <a class="item">
+                        3
+                    </a>
+                    <a class="item">
+                        4
+                    </a>
+                    <div class="disabled item">
+                        ...
+                    </div>
+                    <a class="item">
+                        25
+                    </a>
+                    <a class="item ltsp">
+                        &gt;&gt;
+                    </a>
+                    <a class="item">
+                        &gt;
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="actions">
+            <div class="ui primary button">
+                선택
+            </div>
+            <div class="ui secondary button">
+                취소
+            </div>
+        </div>
+    </div>
+
+    <div class="ui modal mini" id="popup-apply-view">
+        <i class="close icon"></i>
+        <div class="header">
+            리스 자산 반출
+        </div>
+        <div class="scrolling content">
+            임직원의 리스 자산은
+            반출 신청 없이 반출 가능합니다.
+        </div>
+        <div class="actions">
+            <div class="ui primary button">
+                확인
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        $('.dropdown').dropdown();
+
+        $('#rangestart').calendar({
+            type: 'date',
+            endCalendar: $('#rangeend'),
+            formatter: {
+                date: function (date, settings) {
+                    if (!date) return '';
+                    var day = date.getDate();
+                    var month = date.getMonth() + 1;
+                    var year = date.getFullYear();
+                    return year + '-' + month + '-' + day;
+                }
+            }
+        });
+        $('#rangeend').calendar({
+            type: 'date',
+            startCalendar: $('#rangestart'),
+            formatter: {
+                date: function (date, settings) {
+                    if (!date) return '';
+                    var day = date.getDate();
+                    var month = date.getMonth() + 1;
+                    var year = date.getFullYear();
+                    return year + '-' + month + '-' + day;
+                }
+            }
+        });
+
+
+
+        $('#rangestart2').calendar({
+            type: 'date',
+            endCalendar: $('#rangeend2'),
+            formatter: {
+                date: function (date, settings) {
+                    if (!date) return '';
+                    var day = date.getDate();
+                    var month = date.getMonth() + 1;
+                    var year = date.getFullYear();
+                    return year + '-' + month + '-' + day;
+                }
+            }
+        });
+        $('#rangeend2').calendar({
+            type: 'date',
+            startCalendar: $('#rangestart2'),
+            formatter: {
+                date: function (date, settings) {
+                    if (!date) return '';
+                    var day = date.getDate();
+                    var month = date.getMonth() + 1;
+                    var year = date.getFullYear();
+                    return year + '-' + month + '-' + day;
+                }
+            }
+        });
+
+
+        $('#popup-sample').on('click', function () {
+            $('#popup-sample-view').modal({
+                inverted: true
+            }).modal('show');
+        });
+
+        $('#popup-apply').on('click', function () {
+            $('#popup-apply-view').modal({
+                inverted: true
+            }).modal('show');
+        });
+
+        $(document).ready(function () {
+
+
+            // 왼쪽 메인 테이블
+            var leftTable = 'example';
+
+
+            // 왼쪽 메인 테이블 데이터
+            var table = $('#' + leftTable).DataTable({
+                searching: false,
+                lengthChange: false,
+                scrollCollapse: true,
+                "pageLength": 50,
+                info: false,
+                ajax: {
+                    url: "./dummy/joinNested.php",
+                    type: 'get'
+                },
+                columns: [{
+                        data: "users.first_name"
+                    },
+                    {
+                        data: "users.last_name"
+                    },
+                    {
+                        data: "users.phone"
+                    },
+                    {
+                        data: "sites.name"
+                    }
+                ],
+                select: true,
+            });
+
+            table.buttons().container().appendTo($('div.eight.column:eq(0)', table.table().container()));
+
+
+
+        });
+    </script>
+
+</body>
+
+</html>

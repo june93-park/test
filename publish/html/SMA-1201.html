@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>비문관리기준</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.css"
+        integrity="sha512-rVfXYRlhHtd3C4PzoBxSaKhI/uYEi0/5K69RwK/cdxQld57PC6mZ7tkutR+KD96WrXZ6E/96qYeY4CVun7a0/w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="../resources/semantic/semantic.css" />
+    <link rel="stylesheet" href="../resources/css/layout.css" />
+    <link rel="stylesheet" href="../resources/css/contents.css" />
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="../resources/semantic/semantic.js"></script>
+    <script src="../resources/js/sticky.js"></script>
+
+    <!-- 데이터 테이블 사용 화면에서만 사용하는 css / js -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/dataTables.semanticui.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.semanticui.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/select/1.3.4/css/select.semanticui.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/datetime/1.1.2/css/dataTables.dateTime.min.css" />
+    <link rel="stylesheet" type="text/css" href="../resources/semantic/editor.semanticui.min.css" />
+
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/dataTables.semanticui.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.semanticui.min.js"></script>
+    <script src="https://cdn.datatables.net/select/1.3.4/js/dataTables.select.min.js"></script>
+    <script src="https://cdn.datatables.net/datetime/1.1.2/js/dataTables.dateTime.min.js"></script>
+
+
+
+</head>
+
+<body class="iframe-contents">
+    <div class="lg-contents size14">
+
+        <div class="ui pointing secondary menu">
+            <a class="item active">알림메일관리</a>
+        </div>
+
+        <div class="path-wrap">
+            <ul class="path">
+                <li>사업장관리</li>
+                <li>알림메일관리</li>
+            </ul>
+            <div class="btn-group">
+                <div class="ico-btn-wrap">
+                    <a href="#none" class="ui basic icon button">
+                        <i class="ico-manual">manual</i>
+                    </a>
+                    <div class="fav-toggle-wrap">
+                        <input type="checkbox" id="fav" name="fav">
+                        <label class="ui basic icon button" for="fav">
+                            <i class="ico-fav"></i>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="list-header">
+            <div class="search-group">
+                <div class="search-wrap">
+                    <label for="">직원명</label>
+                    <div class="search-cont">
+                        <div class="ui input default-with">
+                            <input type="text" placeholder="직원명을 입력하세요.">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="btn-group">
+                <div class="btn-wrap">
+                    <button class="ui primary button">검색</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="ui right aligned grid">
+            <div class="right floated right aligned ten wide column" id="table-search">
+                <a href="#none" class="ui gray button" id="popup-add">신규 생성</a>
+                <button class="ui gray button">수정</button>
+                <button class="ui gray button">삭제</button>
+            </div>
+        </div>
+
+        <div class="list-container">
+            <div class="ui grid">
+                <div class="sixteen wide column">
+                    <div class="sma-1201-table-wrapper">
+                        <table class="ui celled table" cellspacing="0" width="100%">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>코드</th>
+                                    <th>코드명</th>
+                                    <th>사용자명</th>
+                                    <th>사용자 ID</th>
+                                    <th>사업장그룹/사업장</th>
+                                    <th>사용여부</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="center aligned">
+                                        <div class="ui fitted radio">
+                                            <input type="radio" id="table-radio1" name="table-radio">
+                                            <label for="table-radio1"></label>
+                                        </div>
+                                    </td>
+                                    <td class="center aligned">A</td>
+                                    <td class="center aligned">파트너 메일</td>
+                                    <td class="center aligned">홍길동</td>
+                                    <td class="center aligned">gildong.hong</td>
+                                    <td class="center aligned">트윈</td>
+                                    <td class="center aligned">Y</td>
+                                </tr>
+                                <tr>
+                                    <td class="center aligned">
+                                        <div class="ui fitted radio">
+                                            <input type="radio" id="table-radio2" name="table-radio">
+                                            <label for="table-radio2"></label>
+                                        </div>
+                                    </td>
+                                    <td class="center aligned">A</td>
+                                    <td class="center aligned">파트너 메일</td>
+                                    <td class="center aligned">홍길동</td>
+                                    <td class="center aligned">gildong.hong</td>
+                                    <td class="center aligned">트윈</td>
+                                    <td class="center aligned">Y</td>
+                                </tr>
+                                <tr>
+                                    <td class="center aligned">
+                                        <div class="ui fitted radio">
+                                            <input type="radio" id="table-radio2" name="table-radio">
+                                            <label for="table-radio2"></label>
+                                        </div>
+                                    </td>
+                                    <td class="center aligned">A</td>
+                                    <td class="center aligned">파트너 메일</td>
+                                    <td class="center aligned">홍길동</td>
+                                    <td class="center aligned">gildong.hong</td>
+                                    <td class="center aligned">트윈</td>
+                                    <td class="center aligned">Y</td>
+                                </tr>
+                                <tr>
+                                    <td class="center aligned">
+                                        <div class="ui fitted radio">
+                                            <input type="radio" id="table-radio2" name="table-radio">
+                                            <label for="table-radio2"></label>
+                                        </div>
+                                    </td>
+                                    <td class="center aligned">A</td>
+                                    <td class="center aligned">파트너 메일</td>
+                                    <td class="center aligned">홍길동</td>
+                                    <td class="center aligned">gildong.hong</td>
+                                    <td class="center aligned">트윈</td>
+                                    <td class="center aligned">Y</td>
+                                </tr>
+                                <tr>
+                                    <td class="center aligned">
+                                        <div class="ui fitted radio">
+                                            <input type="radio" id="table-radio2" name="table-radio">
+                                            <label for="table-radio2"></label>
+                                        </div>
+                                    </td>
+                                    <td class="center aligned">A</td>
+                                    <td class="center aligned">파트너 메일</td>
+                                    <td class="center aligned">홍길동</td>
+                                    <td class="center aligned">gildong.hong</td>
+                                    <td class="center aligned">트윈</td>
+                                    <td class="center aligned">Y</td>
+                                </tr>
+                                <tr>
+                                    <td class="center aligned">
+                                        <div class="ui fitted radio">
+                                            <input type="radio" id="table-radio2" name="table-radio">
+                                            <label for="table-radio2"></label>
+                                        </div>
+                                    </td>
+                                    <td class="center aligned">A</td>
+                                    <td class="center aligned">파트너 메일</td>
+                                    <td class="center aligned">홍길동</td>
+                                    <td class="center aligned">gildong.hong</td>
+                                    <td class="center aligned">트윈</td>
+                                    <td class="center aligned">Y</td>
+                                </tr>
+                                <tr>
+                                    <td class="center aligned">
+                                        <div class="ui fitted radio">
+                                            <input type="radio" id="table-radio2" name="table-radio">
+                                            <label for="table-radio2"></label>
+                                        </div>
+                                    </td>
+                                    <td class="center aligned">A</td>
+                                    <td class="center aligned">파트너 메일</td>
+                                    <td class="center aligned">홍길동</td>
+                                    <td class="center aligned">gildong.hong</td>
+                                    <td class="center aligned">트윈</td>
+                                    <td class="center aligned">Y</td>
+                                </tr>
+                                <tr>
+                                    <td class="center aligned">
+                                        <div class="ui fitted radio">
+                                            <input type="radio" id="table-radio2" name="table-radio">
+                                            <label for="table-radio2"></label>
+                                        </div>
+                                    </td>
+                                    <td class="center aligned">A</td>
+                                    <td class="center aligned">파트너 메일</td>
+                                    <td class="center aligned">홍길동</td>
+                                    <td class="center aligned">gildong.hong</td>
+                                    <td class="center aligned">트윈</td>
+                                    <td class="center aligned">Y</td>
+                                </tr>
+                                <tr>
+                                    <td class="center aligned">
+                                        <div class="ui fitted radio">
+                                            <input type="radio" id="table-radio2" name="table-radio">
+                                            <label for="table-radio2"></label>
+                                        </div>
+                                    </td>
+                                    <td class="center aligned">A</td>
+                                    <td class="center aligned">파트너 메일</td>
+                                    <td class="center aligned">홍길동</td>
+                                    <td class="center aligned">gildong.hong</td>
+                                    <td class="center aligned">트윈</td>
+                                    <td class="center aligned">Y</td>
+                                </tr>
+                                <tr>
+                                    <td class="center aligned">
+                                        <div class="ui fitted radio">
+                                            <input type="radio" id="table-radio2" name="table-radio">
+                                            <label for="table-radio2"></label>
+                                        </div>
+                                    </td>
+                                    <td class="center aligned">A</td>
+                                    <td class="center aligned">파트너 메일</td>
+                                    <td class="center aligned">홍길동</td>
+                                    <td class="center aligned">gildong.hong</td>
+                                    <td class="center aligned">트윈</td>
+                                    <td class="center aligned">Y</td>
+                                </tr>
+                                <tr>
+                                    <td class="center aligned">
+                                        <div class="ui fitted radio">
+                                            <input type="radio" id="table-radio2" name="table-radio">
+                                            <label for="table-radio2"></label>
+                                        </div>
+                                    </td>
+                                    <td class="center aligned">A</td>
+                                    <td class="center aligned">파트너 메일</td>
+                                    <td class="center aligned">홍길동</td>
+                                    <td class="center aligned">gildong.hong</td>
+                                    <td class="center aligned">트윈</td>
+                                    <td class="center aligned">Y</td>
+                                </tr>
+                                <tr>
+                                    <td class="center aligned">
+                                        <div class="ui fitted radio">
+                                            <input type="radio" id="table-radio2" name="table-radio">
+                                            <label for="table-radio2"></label>
+                                        </div>
+                                    </td>
+                                    <td class="center aligned">A</td>
+                                    <td class="center aligned">파트너 메일</td>
+                                    <td class="center aligned">홍길동</td>
+                                    <td class="center aligned">gildong.hong</td>
+                                    <td class="center aligned">트윈</td>
+                                    <td class="center aligned">Y</td>
+                                </tr>
+                                <tr>
+                                    <td class="center aligned">
+                                        <div class="ui fitted radio">
+                                            <input type="radio" id="table-radio2" name="table-radio">
+                                            <label for="table-radio2"></label>
+                                        </div>
+                                    </td>
+                                    <td class="center aligned">A</td>
+                                    <td class="center aligned">파트너 메일</td>
+                                    <td class="center aligned">홍길동</td>
+                                    <td class="center aligned">gildong.hong</td>
+                                    <td class="center aligned">트윈</td>
+                                    <td class="center aligned">Y</td>
+                                </tr>
+                                <tr>
+                                    <td class="center aligned">
+                                        <div class="ui fitted radio">
+                                            <input type="radio" id="table-radio2" name="table-radio">
+                                            <label for="table-radio2"></label>
+                                        </div>
+                                    </td>
+                                    <td class="center aligned">A</td>
+                                    <td class="center aligned">파트너 메일</td>
+                                    <td class="center aligned">홍길동</td>
+                                    <td class="center aligned">gildong.hong</td>
+                                    <td class="center aligned">트윈</td>
+                                    <td class="center aligned">Y</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    
+    <div class="ui modal mini" id="popup-add-view">
+        <i class="close icon"></i>
+        <div class="header">
+            신규 생성
+        </div>
+        <div class="scrolling content">
+            <div class="label-form-2">
+                <div class="row">
+                    <div class="label-column">
+                        <label for="">
+                            코드
+                        </label>
+                    </div>
+                    <div class="contents-column">
+                        <select name="" class="ui dropdown w100p">
+                            <option value="">코드</option>
+                            <option value="option1">코드 선택1</option>
+                            <option value="option2">코드 선택2</option>
+                            <option value="option3">코드 선택3</option>
+                        </select>
+                        <div class="ui input w100p">
+                            <input type="text" value="코드명" disabled>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="label-column">
+                        <label for="">
+                            임직원명
+                        </label>
+                    </div>
+                    <div class="contents-column">
+                        <div class="ui action input w100p">
+                            <input type="text" placeholder="">
+                            <div class="ui primary button">
+                                검색
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="label-column">
+                        <label for="">
+                            임직원명
+                        </label>
+                    </div>
+                    <div class="contents-column">
+                        <select name="" class="ui dropdown w100p">
+                            <option value="">사업장A</option>
+                            <option value="option1">사업장</option>
+                            <option value="option2">사업장</option>
+                            <option value="option3">사업장</option>
+                        </select>
+                        <select name="" class="ui dropdown w100p">
+                            <option value="">사업장</option>
+                            <option value="option1">사업장</option>
+                            <option value="option2">사업장</option>
+                            <option value="option3">사업장</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="label-column">
+                        <label for="">
+                            임직원 ID
+                        </label>
+                    </div>
+                    <div class="contents-column">
+                        <div class="ui input w100p">
+                            <input type="text" value="gildong.hong" disabled>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="label-column">
+                        <label for="">
+                            사용여부
+                        </label>
+                    </div>
+                    <div class="contents-column">
+                        <div class="btn-check-wrap">
+                            <input type="radio" id="radio1-1" name="radio1">
+                            <label class="ui basic button" for="radio1-1">사용</label>
+                            <input type="radio" id="radio1-2" name="radio1">
+                            <label class="ui basic button" for="radio1-2">미사용</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="actions">
+            <button class="ui basic button">
+                취소
+            </button>
+            <button class="ui primary button">
+                등록
+            </button>
+        </div>
+    </div>
+
+    <script>
+        $('.dropdown').dropdown();
+
+        $(document).ready(function () {
+            $('#popup-add').on('click', function () {
+            $('#popup-add-view').modal({
+                inverted: true
+            }).modal('show');
+        });
+        });
+
+    </script>
+
+</body>
+
+</html>

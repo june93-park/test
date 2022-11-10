@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>보안사고제보현황</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.css"
+        integrity="sha512-rVfXYRlhHtd3C4PzoBxSaKhI/uYEi0/5K69RwK/cdxQld57PC6mZ7tkutR+KD96WrXZ6E/96qYeY4CVun7a0/w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="../resources/semantic/semantic.css" />
+    <link rel="stylesheet" href="../resources/css/layout.css" />
+    <link rel="stylesheet" href="../resources/css/contents.css" />
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="../resources/semantic/semantic.js"></script>
+    <script src="../resources/js/sticky.js"></script>
+
+    <!-- 데이터 테이블 사용 화면에서만 사용하는 css / js -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/dataTables.semanticui.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.semanticui.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/select/1.3.4/css/select.semanticui.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/datetime/1.1.2/css/dataTables.dateTime.min.css" />
+    <link rel="stylesheet" type="text/css" href="../resources/semantic/editor.semanticui.min.css" />
+
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/dataTables.semanticui.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.semanticui.min.js"></script>
+    <script src="https://cdn.datatables.net/select/1.3.4/js/dataTables.select.min.js"></script>
+    <script src="https://cdn.datatables.net/datetime/1.1.2/js/dataTables.dateTime.min.js"></script>
+
+
+
+</head>
+
+<body class="iframe-contents">
+    <div class="lg-contents size14">
+
+        <div class="ui pointing secondary menu">
+            <a class="item">보안사고제보</a>
+            <a class="item active">보안사고제보현황</a>
+        </div>
+
+        <div class="path-wrap">
+            <ul class="path">
+                <li>보안사고제보</li>
+                <li>보안사고제보현황</li>
+            </ul>
+            <div class="btn-group">
+                <div class="ico-btn-wrap">
+                    <a href="#none" class="ui basic icon button">
+                        <i class="ico-manual">manual</i>
+                    </a>
+                    <div class="fav-toggle-wrap">
+                        <input type="checkbox" id="fav" name="fav">
+                        <label class="ui basic icon button" for="fav">
+                            <i class="ico-fav"></i>
+                        </label>
+                    </div>
+                </div>
+                <div class="btn-wrap">
+                    <button class="ui primary button" id="toggle-contents">상세 토글</button>
+                    <!-- 상세페이지일 때 -->
+                    <button class="ui primary button">목록</button>
+                    <button class="ui primary button">수정</button>
+                    <button class="ui primary button">삭제</button>
+                    <!-- // -->
+                </div>
+            </div>
+        </div>
+
+        <div class="list">
+
+            <div class="ui right aligned grid">
+                <div class="right floated right aligned six wide column">
+                    <div class="btn-group" style="display: inline-flex;">
+                        <div class="btn-wrap">
+                            <a href="#none" class="ui gray button">삭제</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="list-container">
+                <div class="ui grid">
+                    <div class="sixteen wide column">
+                        <table id="example" class="ui celled table" cellspacing="0" width="100%"></table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="detail">
+
+            <div class="notice">
+                교육의 자주성·전문성·정치적 중립성 및 대학의 자율성은 법률이 정하는 바에 의하여 보장된다. 대법원과 각급법원의 조직은 법률로 정한다. 정부는 예산에 변경을 가할 필요가 있을 때에는
+                추가경정예산안을 편성하여 국회에 제출할 수 있다. 국군의 조직과 편성은 법률로 정한다. 각급 선거관리위원회는 선거인명부의 작성등 선거사무와 국민투표사무에 관하여 관계 행정기관에 필요한 지시를 할
+                수 있다.
+    
+                언론·출판에 대한 허가나 검열과 집회·결사에 대한 허가는 인정되지 아니한다. 누구든지 체포 또는 구속을 당한 때에는 즉시 변호인의 조력을 받을 권리를 가진다. 다만, 형사피고인이 스스로 변호인을
+                구할 수 없을 때에는 법률이 정하는 바에 의하여 국가가 변호인을 붙인다. 모든 국민은 인간다운 생활을 할 권리를 가진다.
+            </div>
+    
+            <form action="">
+    
+                <div class="label-form-1">
+                        
+                    <div class="row">
+                        <div class="column-wrap">
+                            <div class="label-column">
+                                <label for="form1">사업장그룹/사업장</label>
+                            </div>
+                            <div class="contents-column">
+                                <div class="ui input default-with">
+                                    <input type="text" value="사업장그룹/사업장" readonly>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="row">
+                        <div class="column-wrap">
+                            <div class="label-column">
+                                <label for="form1">제보자</label>
+                            </div>
+                            <div class="contents-column">
+                                <div class="ui input default-with">
+                                    <input type="text" value="홍길동 선임 (업무혁신담당 > 인프라팀)" readonly>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="row">
+                        <div class="column-wrap">
+                            <div class="label-column">
+                                <label for="form1">연락처</label>
+                            </div>
+                            <div class="contents-column">
+                                <div class="ui input default-with">
+                                    <input type="text" value="82-010-0000-0000" readonly>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="row">
+                        <div class="column-wrap">
+                            <div class="label-column">
+                                <label for="form1">이메일</label>
+                            </div>
+                            <div class="contents-column">
+                                <div class="ui input default-with">
+                                    <input type="text" value="gildong.hong@lge.com" readonly>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="row">
+                        <div class="column-wrap">
+                            <div class="label-column">
+                                <label for="form1">제목</label>
+                            </div>
+                            <div class="contents-column">
+                                <div class="ui input w100p">
+                                    <input type="text" value="제목" readonly>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="row">
+                        <div class="label-column">
+                            <label for="form1">내용</label>
+                        </div>
+                        <div class="contents-column">
+                            <div class="ui form w100p">
+                                <textarea name="" id="" readonly>내용</textarea>
+                            </div>
+                        </div>
+                    </div>
+    
+    
+                    <div class="row">
+                        <div class="label-column">
+                            <label for="">파일 첨부</label>
+                        </div>
+                        <div class="contents-column column">
+                            <!-- 폼 요소 들어가는 부분 -->
+                            <div class="file-wrap">
+                                <div class="ui action input default-with">
+                                    <input type="text" value="파일명" readonly>
+                                    <div class="ui icon button">
+                                        다운로드
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="file-wrap">
+                                <div class="ui action input default-with">
+                                    <input type="text" value="파일명" readonly>
+                                    <div class="ui icon button">
+                                        다운로드
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="row">
+                        <div class="label-column">
+                            <label for="form1">관계</label>
+                        </div>
+                        <div class="contents-column column">
+    
+                            <div class="content-column">
+                                <div class="ui input">
+                                    <input type="text" value="현임직원" readonly>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="row">
+                        <div class="label-column"></div>
+                        <div class="contents-column column">
+                            <div class="auth-wrap">
+                                <div>
+                                    <div class="row multi gap64">
+                                        <div class="column-wrap">
+                                            <div class="label-column">
+                                                <label for="form1">부서</label>
+                                            </div>
+                                            <div class="content-column">
+                                                <div class="ui input default-with">
+                                                    <input type="text" value="부서명" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="column-wrap">
+                                            <div class="label-column">
+                                                <label for="form1">연락처</label>
+                                            </div>
+                                            <div class="content-column">
+                                                <div class="ui input default-with">
+                                                    <input type="text" value="연락처" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row multi gap64">
+                                        <div class="column-wrap">
+                                            <div class="label-column">
+                                                <label for="form1">이름</label>
+                                            </div>
+                                            <div class="content-column">
+                                                <div class="ui input default-with">
+                                                    <input type="text" value="이름" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="column-wrap">
+                                            <div class="label-column">
+                                                <label for="form1">이메일</label>
+                                            </div>
+                                            <div class="content-column">
+                                                <div class="ui input default-with">
+                                                    <input type="text" value="이메일" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="auth-wrap">
+                                <div>
+                                    <div class="row multi gap64">
+                                        <div class="column-wrap">
+                                            <div class="label-column">
+                                                <label for="form1">부서</label>
+                                            </div>
+                                            <div class="content-column">
+                                                <div class="ui input default-with">
+                                                    <input type="text" value="부서명" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="column-wrap">
+                                            <div class="label-column">
+                                                <label for="form1">연락처</label>
+                                            </div>
+                                            <div class="content-column">
+                                                <div class="ui input default-with">
+                                                    <input type="text" value="연락처" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row multi gap64">
+                                        <div class="column-wrap">
+                                            <div class="label-column">
+                                                <label for="form1">이름</label>
+                                            </div>
+                                            <div class="content-column">
+                                                <div class="ui input default-with">
+                                                    <input type="text" value="이름" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="column-wrap">
+                                            <div class="label-column">
+                                                <label for="form1">이메일</label>
+                                            </div>
+                                            <div class="content-column">
+                                                <div class="ui input default-with">
+                                                    <input type="text" value="이메일" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+    
+            </form>
+
+        </div>
+
+    </div>
+
+
+
+    <script>
+
+        btn = $('#toggle-contents');
+        list = $('.list');
+        detail = $('.detail');
+        btn.click(function () {
+            list.toggle();
+            detail.toggle();
+        });
+
+        $('.dropdown').dropdown();
+
+        $('#rangestart').calendar({
+            type: 'date',
+            endCalendar: $('#rangeend'),
+            formatter: {
+                date: function (date, settings) {
+                    if (!date) return '';
+                    var day = date.getDate();
+                    var month = date.getMonth() + 1;
+                    var year = date.getFullYear();
+                    return year + '-' + month + '-' + day;
+                }
+            },
+            popupOptions: {
+                observeChanges: false
+            }
+        });
+        $('#rangeend').calendar({
+            type: 'date',
+            startCalendar: $('#rangestart'),
+            formatter: {
+                date: function (date, settings) {
+                    if (!date) return '';
+                    var day = date.getDate();
+                    var month = date.getMonth() + 1;
+                    var year = date.getFullYear();
+                    return year + '-' + month + '-' + day;
+                }
+            },
+            popupOptions: {
+                observeChanges: false
+            }
+        });
+
+        $(document).ready(function () {
+
+
+            // 왼쪽 메인 테이블
+            var leftTable = 'example';
+
+
+            // 왼쪽 메인 테이블 데이터
+            var table = $('#' + leftTable).DataTable({
+                searching: false,
+                lengthChange: false,
+                scrollCollapse: true,
+                "pageLength": 50,
+                info: false,
+                ajax: {
+                    url: "./dummy/joinNested.php",
+                    type: 'get'
+                },
+                columns: [{
+                        data: "users.first_name"
+                    },
+                    {
+                        data: "users.last_name"
+                    },
+                    {
+                        data: "users.phone"
+                    },
+                    {
+                        data: "sites.name"
+                    }
+                ],
+                select: true,
+            });
+
+            table.buttons().container().appendTo($('div.eight.column:eq(0)', table.table().container()));
+
+        });
+    </script>
+
+</body>
+
+</html>

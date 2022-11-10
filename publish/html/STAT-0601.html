@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>바코드 발급</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.css"
+        integrity="sha512-rVfXYRlhHtd3C4PzoBxSaKhI/uYEi0/5K69RwK/cdxQld57PC6mZ7tkutR+KD96WrXZ6E/96qYeY4CVun7a0/w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="../resources/semantic/semantic.css" />
+    <link rel="stylesheet" href="../resources/css/layout.css" />
+    <link rel="stylesheet" href="../resources/css/contents.css" />
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="../resources/semantic/semantic.js"></script>
+    <script src="../resources/js/sticky.js"></script>
+
+    <!-- 데이터 테이블 사용 화면에서만 사용하는 css / js -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/dataTables.semanticui.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.semanticui.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/select/1.3.4/css/select.semanticui.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/datetime/1.1.2/css/dataTables.dateTime.min.css" />
+    <link rel="stylesheet" type="text/css" href="../resources/semantic/editor.semanticui.min.css" />
+
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/dataTables.semanticui.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.semanticui.min.js"></script>
+    <script src="https://cdn.datatables.net/select/1.3.4/js/dataTables.select.min.js"></script>
+    <script src="https://cdn.datatables.net/datetime/1.1.2/js/dataTables.dateTime.min.js"></script>
+
+
+
+</head>
+
+<body class="iframe-contents">
+    <div class="lg-contents size14">
+
+        <div class="ui pointing secondary menu">
+            <a class="item active">모바일온 정책위반</a>
+        </div>
+
+        <div class="path-wrap">
+            <ul class="path">
+                <li>현황조회</li>
+                <li>모바일온 정책위반</li>
+            </ul>
+            <div class="btn-group">
+                <div class="ico-btn-wrap">
+                    <a href="#none" class="ui basic icon button">
+                        <i class="ico-manual">manual</i>
+                    </a>
+                    <div class="fav-toggle-wrap">
+                        <input type="checkbox" id="fav" name="fav">
+                        <label class="ui basic icon button" for="fav">
+                            <i class="ico-fav"></i>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="list-header">
+            <div class="search-group">
+
+                <div class="search-wrap">
+                    <label for="">사업장그룹/사업장</label>
+                    <div class="search-cont">
+                        <select name="" class="ui dropdown">
+                            <option value="">선택</option>
+                            <option value="option1">사업장그룹1</option>
+                            <option value="option2">사업장그룹2</option>
+                            <option value="option3">사업장그룹3</option>
+                        </select>
+                        <select name="" class="ui dropdown">
+                            <option value="">선택</option>
+                            <option value="option1">사업장1</option>
+                            <option value="option2">사업장2</option>
+                            <option value="option3">사업장3</option>
+                        </select>
+                    </div>
+                </div>
+
+
+                <div class="search-wrap">
+                    <label for="">Search by</label>
+                    <div class="search-cont">
+                        <select name="" class="ui dropdown w130">
+                            <option value="">선택</option>
+                            <option value="option1">전체</option>
+                            <option value="option2">사업부</option>
+                            <option value="option3">부서</option>
+                            <option value="option4">사번</option>
+                            <option value="option5">이메일</option>
+                        </select>
+                        <div class="ui input default-with">
+                            <input type="text" placeholder="검색어를 입력하세요.">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="search-wrap">
+                    <label for="">위반 유형</label>
+                    <div class="search-cont">
+                        <select name="" class="ui dropdown">
+                            <option value="">선택</option>
+                            <option value="option1">관리자모드</option>
+                            <option value="option2">현황보고</option>
+                        </select>
+                        <div class="from-to-date-picker">
+                            <div class="ui calendar" id="rangestart">
+                                <div class="ui input right icon">
+                                    <i class="calendar icon"></i>
+                                    <input type="text" placeholder="2022-04-12">
+                                </div>
+                            </div>
+                            <span>~</span>
+                            <div class="ui calendar" id="rangeend">
+                                <div class="ui input right icon">
+                                    <i class="calendar icon"></i>
+                                    <input type="text" placeholder="2022-04-12">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 위반유형이 현황 보고일때 -->
+                        <!-- <div class="from-to-date-picker">
+                            <div class="ui calendar" id="datepicker">
+                                <div class="ui input right icon">
+                                    <i class="calendar icon"></i>
+                                    <input type="text" placeholder="2022-04-12">
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="btn-group">
+                <div class="btn-wrap">
+                    <button class="ui primary button">검색</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="ui grid">
+            <div class="right floated right aligned ten wide column" id="table-search">
+                <button class="ui gray button">엑셀 다운로드</button>
+            </div>
+        </div>
+
+        <div class="list-container">
+            <div class="ui grid">
+                <div class="sixteen wide column">
+                    <table id="example1" class="ui celled table" cellspacing="0" width="100%"></table>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <!--popup-->
+
+    <script>
+        $('.dropdown').dropdown();
+
+        $('#datepicker').calendar({
+            type: 'date',
+            formatter: {
+                date: function (date, settings) {
+                    if (!date) return '';
+                    var day = date.getDate();
+                    var month = date.getMonth() + 1;
+                    var year = date.getFullYear();
+                    return year + '-' + month + '-' + day;
+                }
+            }
+        });
+
+        $('#rangestart').calendar({
+            type: 'date',
+            endCalendar: $('#rangeend'),
+            formatter: {
+                date: function (date, settings) {
+                    if (!date) return '';
+                    var day = date.getDate();
+                    var month = date.getMonth() + 1;
+                    var year = date.getFullYear();
+                    return year + '-' + month + '-' + day;
+                }
+            }
+        });
+        $('#rangeend').calendar({
+            type: 'date',
+            startCalendar: $('#rangestart'),
+            formatter: {
+                date: function (date, settings) {
+                    if (!date) return '';
+                    var day = date.getDate();
+                    var month = date.getMonth() + 1;
+                    var year = date.getFullYear();
+                    return year + '-' + month + '-' + day;
+                }
+            }
+        });
+
+        $(document).ready(function () {
+
+            btn = $('#toggle-contents');
+            list = $('.list');
+            detail = $('.detail');
+            btn.click(function () {
+                list.toggle();
+                detail.toggle();
+            });
+
+            // 데이터 테이블
+            var leftTable = 'example1';
+
+            var table = $('#' + leftTable).DataTable({
+                searching: false,
+                lengthChange: false,
+                scrollCollapse: true,
+                "pageLength": 50,
+                info: false,
+                ajax: {
+                    url: "./dummy/stat0601Data1.php",
+                    type: 'get'
+                },
+                columnDefs: [{
+                    searchable: false,
+                    orderable: false,
+                    targets: 0,
+                }, ],
+                order: [
+                    [1, 'asc']
+                ],
+                columns: [{
+                        data: 'no',
+                        className: 'center',
+                        title: 'No.',
+                        width: 40
+                    },
+                    {
+                        data: 'part1',
+                        className: 'center',
+                        title: '사업부',
+                    },
+                    {
+                        data: 'part2',
+                        className: 'center',
+                        title: '부서',
+                    },
+                    {
+                        data: 'name',
+                        className: 'center',
+                        title: '이름',
+                    },
+                    {
+                        data: 'phone',
+                        className: 'center',
+                        title: '연락처(휴대폰)',
+                    },
+                    {
+                        data: 'mobile',
+                        className: 'center',
+                        title: '통신사',
+                    },
+                    {
+                        data: 'co-no',
+                        className: 'center',
+                        title: '사번',
+                    },
+                    {
+                        data: 'email',
+                        className: 'center',
+                        title: '이메일',
+                    },
+                    {
+                        data: 'model',
+                        className: 'center',
+                        title: '모델명',
+                    },
+                    {
+                        data: 'os',
+                        className: 'center',
+                        title: 'OS',
+                    },
+                    {
+                        data: 'count',
+                        className: 'center',
+                        // 위반 유형이 현황 보고일 경우 title 을 경과일로 변경
+                        title: '관리자 모드<br>위반일 수',
+                    }
+                ],
+                select: true
+            });
+
+            table.on('order.dt search.dt', function () {
+                let i = 1;
+
+                table.cells(null, 0, {
+                    search: 'applied',
+                    order: 'applied'
+                }).every(function (cell) {
+                    this.data(i++);
+                });
+            }).draw();
+
+
+        });
+    </script>
+
+</body>
+
+</html>

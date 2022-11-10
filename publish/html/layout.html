@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LG Security Portal</title>
+    <link rel="stylesheet" type="text/css" href="../resources/semantic/semantic.css" />
+    <link rel="stylesheet" href="../resources/css/layout.css" />
+    <!-- 자가환입 팝업으로 인한 contents css 추가 -->
+    <link rel="stylesheet" href="../resources/css/contents.css" />
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="../resources/semantic/semantic.js"></script>
+    <script src="../resources/js/layout.js"></script>
+</head>
+
+<body>
+    <div class="lg-wrapper">
+        <!-- header -->
+        <div class="lg-header">
+            <!-- logo -->
+            <div class="lg-logo">
+                <a href="#none">Security Portal</a>
+            </div>
+            <!-- // logo -->
+            <div class="lg-gnb">
+                <!-- 220610 -->
+                <div class="ui floating location">
+                    <a href="#none" class="ico gnb1">로케이션</a>
+                    <div class="menu">
+                        <div class="ui message">
+                            <p>
+                                <span class="badge red">사업장</span> 트윈B/D
+                            </p>
+                            <p>
+                                <span class="badge red">타임존</span> Asia/Seoul
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- //220610 -->
+                <a href="#none" id="popup-1" class="ico gnb2">자가환입</a>
+                <div class="ui dropdown floating lang">
+                    <span>KOR</span>
+                    <div class="menu">
+                        <div class="item">KOR</div>
+                        <div class="item">ENG</div>
+                        <div class="item">CHN</div>
+                    </div>
+                </div>
+            </div>
+            <div class="lg-login-user">
+                <div class="lg-user-name">홍길동 선임</div>
+                <div class="lg-user-grade">일반 사용자</div>
+            </div>
+        </div>
+        <!-- //header -->
+        <div class="lg-container">
+            <!-- side menu -->
+            <div class="lg-side">
+                <!-- menu -->
+                <div class="lg-side-menu">
+                    <!-- search -->
+                    <div class="lg-search-wrap">
+                        <input type="text" class="lg-search" placeholder="메뉴명" />
+                    </div>
+                    <!-- // search -->
+                    <!-- main menu -->
+                    <div class="lg-main-menu">
+                        <!-- quick menu -->
+                        <ul>
+                            <li>
+                                <a href="#none">
+                                    <i class="ico ico1"></i>
+                                    <span>사이트맵</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#none">
+                                    <i class="ico ico2"></i>
+                                    <span>즐겨찾기</span>
+                                </a>
+                            </li>
+                            <li class="li-divider"></li>
+                            <li>
+                                <p>
+                                    <i class="ico ico3"></i>
+                                    <span>MY 보안현황</span>
+                                </p>
+                                <ul class="lg-sub-menu">
+                                    <li>
+                                        <a href="#none">업무용 저장 매체 등록요청</a>
+                                    </li>
+                                    <li>
+                                        <a href="#none">서브메뉴2</a>
+                                    </li>
+                                    <li>
+                                        <a href="#none">서브메뉴3</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>
+                                    <i class="ico ico12"></i>
+                                    <span>자산</span>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <i class="ico ico4"></i>
+                                    <span>출입</span>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <i class="ico ico13"></i>
+                                    <span>네트워크</span>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <i class="ico ico14"></i>
+                                    <span>PC/모바일</span>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <i class="ico ico11"></i>
+                                    <span>기타</span>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <i class="ico ico8"></i>
+                                    <span>GSI</span>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <i class="ico ico6"></i>
+                                    <span>시스템관리</span>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <i class="ico ico7"></i>
+                                    <span>사업장관리</span>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <i class="ico ico9"></i>
+                                    <span>현황조회</span>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <i class="ico ico10"></i>
+                                    <span>데스크</span>
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- // main menu -->
+                </div>
+                <!-- // menu -->
+            </div>
+            <!-- // side menu -->
+            <!-- container -->
+            <iframe src="./STAT-0201.html" id="auto-height-iframe" name="" title="" frameborder="0" scrolling="yes"></iframe>
+        </div>
+        <!-- //container -->
+    </div>
+    <div class="ui modal mini" id="popup-1-view">
+        <i class="close icon"></i>
+        <div class="header">
+            PC자가환입
+        </div>
+        <div class="scrolling content">
+            <div class="label-form-2">
+                <div class="row">
+                    <div class="label-column">
+                        <label for="">
+                            PC 이름
+                        </label>
+                    </div>
+                    <div class="contents-column">
+
+                        <select name="" class="ui dropdown w100p">
+                            <option value="">PC 이름</option>
+                            <option value="option1">PC 이름1</option>
+                            <option value="option2">PC 이름2</option>
+                            <option value="option3">PC 이름3</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="label-column">
+                        <label for="">
+                            자산 실사용자
+                        </label>
+                    </div>
+                    <div class="contents-column">
+                        <p>
+                            홍길동
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="label-column">
+                        <label for="">
+                            자산 실사용자 사번
+                        </label>
+                    </div>
+                    <div class="contents-column">
+                        <p>
+                            X1239347
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="label-column">
+                        <label for="">
+                            IP주소
+                        </label>
+                    </div>
+                    <div class="contents-column">
+                        <p>
+                            192.168.0.1
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="actions">
+            <a href="#none" class="ui primary button">
+                자가환입
+            </a>
+            <a href="#none" class="ui basic button">
+                취소
+            </a>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('#popup-1').on('click', function () {
+                $('#popup-1-view').modal({
+                    inverted: true
+                }).modal('show');
+            });
+        });
+    </script>
+</body>
+
+</html>

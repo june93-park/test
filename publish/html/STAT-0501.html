@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>바코드 발급</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.css"
+        integrity="sha512-rVfXYRlhHtd3C4PzoBxSaKhI/uYEi0/5K69RwK/cdxQld57PC6mZ7tkutR+KD96WrXZ6E/96qYeY4CVun7a0/w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="../resources/semantic/semantic.css" />
+    <link rel="stylesheet" href="../resources/css/layout.css" />
+    <link rel="stylesheet" href="../resources/css/contents.css" />
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="../resources/semantic/semantic.js"></script>
+    <script src="../resources/js/sticky.js"></script>
+
+    <!-- 데이터 테이블 사용 화면에서만 사용하는 css / js -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/dataTables.semanticui.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.semanticui.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/select/1.3.4/css/select.semanticui.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/datetime/1.1.2/css/dataTables.dateTime.min.css" />
+    <link rel="stylesheet" type="text/css" href="../resources/semantic/editor.semanticui.min.css" />
+
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/dataTables.semanticui.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.semanticui.min.js"></script>
+    <script src="https://cdn.datatables.net/select/1.3.4/js/dataTables.select.min.js"></script>
+    <script src="https://cdn.datatables.net/datetime/1.1.2/js/dataTables.dateTime.min.js"></script>
+
+
+
+</head>
+
+<body class="iframe-contents">
+    <div class="lg-contents size14">
+
+        <div class="ui pointing secondary menu">
+            <a class="item active">모바일온 설치현황</a>
+        </div>
+
+        <div class="path-wrap">
+            <ul class="path">
+                <li>현황조회</li>
+                <li>모바일온 설치현황</li>
+            </ul>
+            <div class="btn-group">
+                <div class="ico-btn-wrap">
+                    <a href="#none" class="ui basic icon button">
+                        <i class="ico-manual">manual</i>
+                    </a>
+                    <div class="fav-toggle-wrap">
+                        <input type="checkbox" id="fav" name="fav">
+                        <label class="ui basic icon button" for="fav">
+                            <i class="ico-fav"></i>
+                        </label>
+                    </div>
+                </div>
+                <div class="btn-wrap">
+                    <button class="ui primary button" id="toggle-contents">토글버튼</button>
+                </div>
+            </div>
+        </div>
+
+
+        
+        <div class="list-header">
+            <div class="search-group">
+
+                <div class="search-wrap">
+                    <label for="">사업장그룹/사업장</label>
+                    <div class="search-cont">
+                        <select name="" class="ui dropdown">
+                            <option value="">선택</option>
+                            <option value="option1">사업장그룹1</option>
+                            <option value="option2">사업장그룹2</option>
+                            <option value="option3">사업장그룹3</option>
+                        </select>
+                        <select name="" class="ui dropdown">
+                            <option value="">선택</option>
+                            <option value="option1">사업장1</option>
+                            <option value="option2">사업장2</option>
+                            <option value="option3">사업장3</option>
+                        </select>
+                    </div>
+                </div>
+
+                
+                <div class="search-wrap">
+                    <label for="">정책 그룹</label>
+                    <div class="search-cont">
+                        <select name="" class="ui dropdown">
+                            <option value="">선택</option>
+                            <option value="option1">전체</option>
+                            <option value="option2">정책 그룹1</option>
+                            <option value="option3">정책 그룹2</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="search-wrap">
+                    <label for="">모델명</label>
+                    <div class="search-cont">
+                        <select name="" class="ui dropdown">
+                            <option value="">선택</option>
+                            <option value="option1">전체</option>
+                            <option value="option2">모델명1</option>
+                            <option value="option3">모델명2</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="search-wrap">
+                    <label for="">상태</label>
+                    <div class="search-cont">
+                        <select name="" class="ui dropdown">
+                            <option value="">선택</option>
+                            <option value="option1">전체</option>
+                            <option value="option2">정책 예외</option>
+                            <option value="option3">활성화</option>
+                            <option value="option4">폐기</option>
+                        </select>
+                    </div>
+                </div>
+                
+
+            </div>
+
+            <div class="btn-group">
+                <div class="btn-wrap">
+                    <button class="ui primary button">검색</button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="list">
+
+
+            <div class="ui right aligned grid">
+                <div class="right floated right aligned ten wide column" id="table-search">
+                    <button class="ui gray button">엑셀 다운로드</button>
+                </div>
+            </div>
+
+            <div class="list-container">
+                <div class="ui grid">
+                    <div class="sixteen wide column">
+                        <table class="ui celled table">
+                            <colgroup></colgroup>
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>총</th>
+                                    <th>설치</th>
+                                    <th>미등록</th>
+                                    <th>설치(%)</th>
+                                    <th>정책예외</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="center aligned">총</td>
+                                    <td class="center aligned">000</td>
+                                    <td class="center aligned">000</td>
+                                    <td class="center aligned">000</td>
+                                    <td class="center aligned">00%</td>
+                                    <td class="center aligned">000</td>
+                                </tr>
+                                <tr>
+                                    <td class="center aligned">임직원</td>
+                                    <td class="center aligned">000</td>
+                                    <td class="center aligned">000</td>
+                                    <td class="center aligned">000</td>
+                                    <td class="center aligned">00%</td>
+                                    <td class="center aligned">000</td>
+                                </tr>
+                                <tr>
+                                    <td class="center aligned">협력업체</td>
+                                    <td class="center aligned">000</td>
+                                    <td class="center aligned">000</td>
+                                    <td class="center aligned">000</td>
+                                    <td class="center aligned">00%</td>
+                                    <td class="center aligned">000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="ui grid">
+                    <div class="sixteen wide column">
+                        <table id="example1" class="ui celled table" cellspacing="0" width="100%"></table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="detail">
+            <div class="ui grid">
+                <div class="six wide column">
+                    <button class="ui gray button">이전</button>
+                    <button class="ui gray button" id="popup-1">해지</button>
+                    <button class="ui gray button" id="popup-2">기기 삭제</button>
+                    <button class="ui gray button" id="popup-3">사용자 삭제</button>
+                </div>
+                <div class="right floated right aligned ten wide column" id="table-search">
+                    <button class="ui gray button">엑셀 다운로드</button>
+                </div>
+            </div>
+
+            <div class="list-container">
+                <div class="ui grid">
+                    <div class="sixteen wide column">
+                        <table id="example2" class="ui celled table" cellspacing="0" width="100%"></table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="ui modal mini" id="popup-1-view">
+        <i class="close icon"></i>
+        <div class="header">
+            해지 요청
+        </div>
+        <div class="scrolling content" style="min-height: 0;">
+            선택한 기기의 모바일온 설치를 해지하시겠습니까?
+        </div>
+        <div class="actions">
+            <a href="#none" class="ui primary button">
+                확인
+            </a>
+            <a href="#none" class="ui basic button">
+                취소
+            </a>
+        </div>
+    </div>
+
+    <div class="ui modal mini" id="popup-2-view">
+        <i class="close icon"></i>
+        <div class="header">
+            기기 삭제
+        </div>
+        <div class="scrolling content" style="min-height: 0;">
+            선택한 기기를 삭제하시겠습니까?
+        </div>
+        <div class="actions">
+            <a href="#none" class="ui primary button">
+                확인
+            </a>
+            <a href="#none" class="ui basic button">
+                취소
+            </a>
+        </div> 
+    </div>
+
+    <div class="ui modal mini" id="popup-3-view">
+        <i class="close icon"></i>
+        <div class="header">
+            사용자 삭제
+        </div>
+        <div class="scrolling content" style="min-height: 0;">
+            선택한 기기의 사용자 정보를 삭제하시겠습니까?
+        </div>
+        <div class="actions">
+            <a href="#none" class="ui primary button">
+                확인
+            </a>
+            <a href="#none" class="ui basic button">
+                취소
+            </a>
+        </div>
+    </div>
+
+
+    <!--popup-->
+
+    <script>
+        $('.dropdown').dropdown();
+
+        
+        $('#popup-1').on('click', function () {
+            $('#popup-1-view').modal({
+                inverted: true
+            }).modal('show');
+        });
+
+        $('#popup-2').on('click', function () {
+            $('#popup-2-view').modal({
+                inverted: true
+            }).modal('show');
+        });
+
+        $('#popup-3').on('click', function () {
+            $('#popup-3-view').modal({
+                inverted: true
+            }).modal('show');
+        });
+
+        $(document).ready(function () {
+
+            btn = $('#toggle-contents');
+            list = $('.list');
+            detail = $('.detail');
+            btn.click(function () {
+                list.toggle();
+                detail.toggle();
+            });
+
+
+            // 데이터 테이블
+            var leftTable = 'example1';
+
+            var table = $('#' + leftTable).DataTable({
+                searching: false,
+                lengthChange: false,
+                scrollCollapse: true,
+                "pageLength": 50,
+                info: false,
+                ajax: {
+                    url: "./dummy/mobileonExample.php",
+                    type: 'get'
+                },
+                columnDefs: [{
+                    searchable: false,
+                    orderable: false,
+                    targets: 0,
+                }, ],
+                order: [
+                    [1, 'asc']
+                ],
+                columns: [{
+                        data: 'no',
+                        className: 'center',
+                        title: 'No.',
+                        width: 40
+                    },
+                    {
+                        data: 'part1',
+                        className: 'center',
+                        title: '사업부',
+                    },
+                    {
+                        data: 'part2',
+                        className: 'center',
+                        title: '부서',
+                    },
+                    {
+                        data: 'total',
+                        className: 'center',
+                        title: '총',
+                    },
+                    {
+                        data: 'install',
+                        className: 'center',
+                        title: '설치',
+                    },
+                    {
+                        data: 'unregistered',
+                        className: 'center',
+                        title: '미등록',
+                    },
+                    {
+                        data: 'installper',
+                        className: 'center',
+                        title: '설치(%)',
+                    },
+                    {
+                        data: 'except',
+                        className: 'center',
+                        title: '정책 예외',
+                        width: 100
+                    }
+                ],
+                select: true
+            });
+
+            table.on('order.dt search.dt', function () {
+                let i = 1;
+
+                table.cells(null, 0, {
+                    search: 'applied',
+                    order: 'applied'
+                }).every(function (cell) {
+                    this.data(i++);
+                });
+            }).draw();
+
+
+            var detailTable = 'example2';
+
+            // 디테일 테이블 데이터
+            var table2 = $('#' + detailTable).DataTable({
+                searching: false,
+                lengthChange: false,
+                scrollCollapse: true,
+                "pageLength": 50,
+                info: false,
+                ajax: {
+                    url: "./dummy/mobileonExample2.php",
+                    type: 'get'
+                },
+                columnDefs: [{
+                    searchable: false,
+                    orderable: false,
+                    targets: 0,
+                }, ],
+                order: [
+                    [1, 'asc']
+                ],
+                columns: [
+                    {
+                        data: null,
+                        className: 'center',
+                        title: '<div class="ui fitted checkbox">' +
+                            '<input type="checkbox" name="">' +
+                            '<label for=""></label>' + '</div>',
+                        render: function (data, type, row) {
+                            if (data == true) {
+                                return '<div class="ui fitted checkbox"><input type="checkbox" checked><label for=""></label></div>';
+                            } else {
+                                return '<div class="ui fitted checkbox"><input type="checkbox"><label for=""></label></div>';
+                            }
+                            return data;
+                        },
+                        width: 27
+                    },
+                    {
+                        data: 'no',
+                        className: 'center',
+                        title: 'No.',
+                        width: 40
+                    },
+                    {
+                        data: 'part1',
+                        className: 'center',
+                        title: '사업부',
+                    },
+                    {
+                        data: 'part2',
+                        className: 'center',
+                        title: '부서',
+                    },
+                    {
+                        data: 'name',
+                        className: 'center',
+                        title: '이름',
+                        width: 80
+                    },
+                    {
+                        data: 'phone',
+                        className: 'center',
+                        title: '휴대폰번호',
+                        width: 100
+                    },
+                    {
+                        data: 'mobile',
+                        className: 'center',
+                        title: '통신사',
+                        width: 100
+                    },
+                    {
+                        data: 'model',
+                        className: 'center',
+                        title: '모델명',
+                        width: 100
+                    },
+                    {
+                        data: 'os',
+                        className: 'center',
+                        title: 'OS명',
+                        width: 100
+                    },
+                    {
+                        data: 'group',
+                        className: 'center',
+                        title: '정책 그룹',
+                    },
+                    {
+                        data: 'status',
+                        className: 'center',
+                        title: '상태',
+                        width: 100
+                    },
+                ],
+                select: true,
+                "initComplete": function (settings, json) {
+
+                }
+            });
+
+
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>모바일온 예외정책</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.css"
+        integrity="sha512-rVfXYRlhHtd3C4PzoBxSaKhI/uYEi0/5K69RwK/cdxQld57PC6mZ7tkutR+KD96WrXZ6E/96qYeY4CVun7a0/w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="../resources/semantic/semantic.css" />
+    <link rel="stylesheet" href="../resources/css/layout.css" />
+    <link rel="stylesheet" href="../resources/css/contents.css" />
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="../resources/semantic/semantic.js"></script>
+    <script src="../resources/js/sticky.js"></script>
+
+</head>
+
+<body class="iframe-contents">
+    <div class="lg-contents size14">
+
+        <div class="ui pointing secondary menu">
+            <a class="item">정보자산</a>
+            <a class="item">미등록정보자산</a>
+            <a class="item">고정/일반자산</a>
+            <a class="item">문서자산</a>
+            <a class="item">오반입자산</a>
+            <a class="item active">수시반출</a>
+        </div>
+
+        <div class="path-wrap">
+            <ul class="path">
+                <li>자산</li>
+                <li>자산반출</li>
+                <li>수시반출</li>
+            </ul>
+            <div class="btn-group">
+                <div class="ico-btn-wrap">
+                    <a href="#none" class="ui basic icon button">
+                        <i class="ico-manual">manual</i>
+                    </a>
+                    <div class="fav-toggle-wrap">
+                        <input type="checkbox" id="fav" name="fav">
+                        <label class="ui basic icon button" for="fav">
+                            <i class="ico-fav"></i>
+                        </label>
+                    </div>
+                </div>
+                <div class="btn-wrap">
+                    <button class="ui primary button">요청</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="notice">
+            교육의 자주성·전문성·정치적 중립성 및 대학의 자율성은 법률이 정하는 바에 의하여 보장된다. 대법원과 각급법원의 조직은 법률로 정한다. 정부는 예산에 변경을 가할 필요가 있을 때에는
+            추가경정예산안을 편성하여 국회에 제출할 수 있다. 국군의 조직과 편성은 법률로 정한다. 각급 선거관리위원회는 선거인명부의 작성등 선거사무와 국민투표사무에 관하여 관계 행정기관에 필요한 지시를 할
+            수 있다.
+
+            언론·출판에 대한 허가나 검열과 집회·결사에 대한 허가는 인정되지 아니한다. 누구든지 체포 또는 구속을 당한 때에는 즉시 변호인의 조력을 받을 권리를 가진다. 다만, 형사피고인이 스스로 변호인을
+            구할 수 없을 때에는 법률이 정하는 바에 의하여 국가가 변호인을 붙인다. 모든 국민은 인간다운 생활을 할 권리를 가진다.
+        </div>
+
+        <form action="">
+
+            <div class="label-form-1">
+
+                <div class="row multi">
+                    <div class="column-wrap">
+                        <div class="label-column required">
+                            <label for="form1">신청자</label>
+                        </div>
+                        <div class="contents-column">
+                            <div class="ui input default-with">
+                                <input type="text" value="홍길동 선임 (업무혁신담당 > 인프라팀)" readonly>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row multi">
+                    <div class="column-wrap">
+                        <div class="label-column required">
+                            <label for="form1">대상자</label>
+                        </div>
+                        <div class="contents-column">
+                            <div class="ui action input default-with">
+                                <input type="text" placeholder="홍길동 선임 (업무혁신담당 > 인프라팀)">
+                                <div class="ui primary button" id="popup-sample">
+                                    검색
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--<div class="row ">
+                    <div class="label-column">
+                        <label for="form1">반출유형</label>
+                    </div>
+                    <div class="contents-column">
+                        <div class="btn-check-wrap">
+                            <input type="radio" id="radio1-1" name="radio1" checked>
+                            <label class="ui basic button" for="radio1-1">사업장간 이동</label>
+                            <input type="radio" id="radio1-2" name="radio1">
+                            <label class="ui basic button" for="radio1-2">사외반출</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row multi">
+                    <div class="column-wrap">
+                        <div class="label-column required">
+                            <label for="form1">반출 목적지</label>
+                        </div>
+                        <div class="contents-column">
+                            <select name="form1" class="ui dropdown default-with">
+                                <option value="">반출 목적지</option>
+                                <option value="option1">가산 A</option>
+                                <option value="option2">가산 B</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="column-wrap">
+                        <div class="label-column required">
+                            <label for="form1">목적지 수령인</label>
+                        </div>
+                        <div class="contents-column">
+                            <div class="ui action input default-with">
+                                <input type="text" placeholder="홍길동 선임 (업무혁신담당 > 인프라팀)">
+                                <div class="ui primary button" id="popup-sample">
+                                    검색
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+
+
+                <div class="row">
+                    <!-- <div class="label-column"></div> -->
+                    <!-- 20220620 테이블 관련 label 삭제 및 width 100 percent 추가 -->
+                    <div class="contents-column w100p">
+                        <table class="ui celled table">
+                            <!-- 20220620 colgroup 추가 -->
+                            <colgroup>
+                                <col width="60">
+                                <col width="">
+                                <col width="">
+                                <col width="">
+                                <col width="172">
+                                <col width="310">
+                                <col width="110">
+                            </colgroup>
+                            <!-- // -->
+                            <thead>
+                                <tr>
+                                    <th>No.</th>
+                                    <th class="required">신청항목</th>
+                                    <th class="required">수량</th>
+                                    <th class="required">자산번호</th>
+                                    <th>환입유형</th>
+                                    <th class="required">기간</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <tr>
+                                    <td class="center aligned">1</td>
+                                    <!-- 셀렉트 박스 문제로 인한 td-select 클래스명 추가 20220617 -->
+                                    <td class="center aligned td-select">
+                                        <select name="" class="ui dropdown">
+                                            <option value="">선택</option>
+                                            <option value="option1">데스크탑</option>
+                                            <option value="option2">노트북</option>
+                                            <option value="option3">NAS</option>
+                                            <option value="option4">공유기(AP)</option>
+                                            <option value="option5">CD</option>
+                                            <option value="option6">DVD</option>
+                                            <option value="option7">HDD</option>
+                                            <option value="option8">USB</option>
+                                            <option value="option9">디지털카메라</option>
+                                            <option value="option10">태블릿PC</option>
+                                            <option value="option11">샘플폰</option>
+                                            <option value="option12">서버장비</option>
+                                            <option value="option13">네트워크장비</option>
+                                            <option value="option14">기타</option>
+                                        </select>
+                                    </td>
+                                    <td class="center aligned">
+                                        <div class="ui input">
+                                            <input type="text" value="1" readonly>
+                                        </div>
+                                    </td>
+                                    <td class="center aligned">
+                                        <div class="ui input">
+                                            <input type="text" placeholder="자산번호 입력">
+                                        </div>
+                                    </td>
+                                    <td class="center aligned">
+                                        <div class="btn-check-wrap">
+                                            <input type="radio" id="radio2-1" name="radio2" checked>
+                                            <label class="ui basic button" for="radio2-1">환입요</label>
+                                            <input type="radio" id="radio2-2" name="radio2" disabled>
+                                            <label class="ui basic button" for="radio2-2">환입불요</label>
+                                        </div>
+                                    </td>
+                                    <td class="center aligned">
+                                        <div class="from-to-date-picker">
+                                            <div class="ui calendar" id="rangestart">
+                                                <div class="ui input right icon">
+                                                    <i class="calendar icon"></i>
+                                                    <input type="text" placeholder="2022-04-12">
+                                                </div>
+                                            </div>
+                                            <span>~</span>
+                                            <div class="ui calendar" id="rangeend">
+                                                <div class="ui input right icon">
+                                                    <i class="calendar icon"></i>
+                                                    <input type="text" placeholder="2022-04-12">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="center aligned">
+                                        <div class="btn-group">
+                                            <div class="ico-btn-wrap">
+                                                <a href="#none" class="ui basic icon button">
+                                                    <i class="ico-plus">test</i>
+                                                </a>
+                                                <a href="#none" class="ui basic icon button">
+                                                    <i class="ico-minus">test</i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td class="center aligned">2</td>
+                                    <!-- 셀렉트 박스 문제로 인한 td-select 클래스명 추가 20220617 -->
+                                    <td class="center aligned td-select">
+                                        <select name="" class="ui dropdown">
+                                            <option value="">선택</option>
+                                            <option value="option1">데스크탑</option>
+                                            <option value="option2">노트북</option>
+                                            <option value="option3">NAS</option>
+                                            <option value="option4">공유기(AP)</option>
+                                            <option value="option5">CD</option>
+                                            <option value="option6">DVD</option>
+                                            <option value="option7">HDD</option>
+                                            <option value="option8">USB</option>
+                                            <option value="option9">디지털카메라</option>
+                                            <option value="option10">태블릿PC</option>
+                                            <option value="option11">샘플폰</option>
+                                            <option value="option12">서버장비</option>
+                                            <option value="option13">네트워크장비</option>
+                                            <option value="option14">기타</option>
+                                        </select>
+                                    </td>
+                                    <td class="center aligned">
+                                        <div class="ui input">
+                                            <input type="text" value="1" readonly>
+                                        </div>
+                                    </td>
+                                    <td class="center aligned">
+                                        <div class="ui input">
+                                            <input type="text" placeholder="자산번호 입력">
+                                        </div>
+                                    </td>
+                                    <td class="center aligned">
+                                        <div class="btn-check-wrap">
+                                            <input type="radio" id="radio3-1" name="radio3" checked>
+                                            <label class="ui basic button" for="radio3-1">환입요</label>
+                                            <input type="radio" id="radio3-2" name="radio3" disabled>
+                                            <label class="ui basic button" for="radio3-2">환입불요</label>
+                                        </div>
+                                    </td>
+                                    <td class="center aligned">
+                                        -
+                                    </td>
+                                    <td class="center aligned">
+                                        <div class="btn-group">
+                                            <div class="ico-btn-wrap">
+                                                <a href="#none" class="ui basic icon button">
+                                                    <i class="ico-plus">test</i>
+                                                </a>
+                                                <a href="#none" class="ui basic icon button">
+                                                    <i class="ico-minus">test</i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="label-column required">
+                        <label for="form1">신청 사유</label>
+                    </div>
+                    <div class="contents-column">
+                        <div class="ui form w100p">
+                            <textarea name="" id="" placeholder="신청 사유를 상세히 입력해주세요."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="label-column">
+                        <label for="form1">결재자</label>
+                    </div>
+                    <div class="contents-column column">
+
+                        <div class="auth-wrap">
+                            <a href="#none" class="ui basic icon button">
+                                <i class="ico-align">test</i>
+                            </a>
+                            <div class="ui action input default-with">
+                                <input type="text" placeholder="홍길동 선임 (업무혁신담당 > 인프라팀)">
+                                <div class="ui primary button">
+                                    검색
+                                </div>
+                            </div>
+                            <select name="gender" class="ui dropdown">
+                                <option value="">허용/동의</option>
+                                <option value="option1">허용/동의1</option>
+                                <option value="option2">허용/동의2</option>
+                            </select>
+                            <a href="#none" class="ui basic icon button">
+                                <i class="ico-plus">test</i>
+                            </a>
+                            <a href="#none" class="ui basic icon button">
+                                <i class="ico-minus">test</i>
+                            </a>
+                        </div>
+
+                        <div class="auth-wrap">
+                            <a href="#none" class="ui basic icon button">
+                                <i class="ico-align">test</i>
+                            </a>
+                            <div class="ui action input default-with">
+                                <input type="text" placeholder="홍길동 선임 (업무혁신담당 > 인프라팀)">
+                                <div class="ui primary button">
+                                    검색
+                                </div>
+                            </div>
+                            <select name="gender" class="ui dropdown">
+                                <option value="">허용/동의</option>
+                                <option value="option1">허용/동의1</option>
+                                <option value="option2">허용/동의2</option>
+                            </select>
+                            <a href="#none" class="ui basic icon button">
+                                <i class="ico-plus">test</i>
+                            </a>
+                            <a href="#none" class="ui basic icon button">
+                                <i class="ico-minus">test</i>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="label-column">
+                        <label for="form1">참조자</label>
+                    </div>
+                    <div class="contents-column column">
+
+                        <div class="auth-wrap">
+                            <a href="#none" class="ui basic icon button">
+                                <i class="ico-align">test</i>
+                            </a>
+                            <div class="ui action input default-with">
+                                <input type="text" placeholder="홍길동 선임 (업무혁신담당 > 인프라팀)">
+                                <div class="ui primary button">
+                                    검색
+                                </div>
+                            </div>
+                            <div class="empty-select"></div>
+                            <a href="#none" class="ui basic icon button">
+                                <i class="ico-plus">test</i>
+                            </a>
+                            <a href="#none" class="ui basic icon button">
+                                <i class="ico-minus">test</i>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </form>
+
+    </div>
+
+
+    <!--popup-->
+
+    <div class="ui modal" id="popup-sample-view">
+        <i class="close icon"></i>
+        <div class="header">
+            직원검색
+        </div>
+        <div class="scrolling content">
+            <div class="popup-search">
+                <div class="popup-search-wrap">
+                    <select name="" class="ui dropdown">
+                        <option value="">검색 조건</option>
+                        <option value="option1">SSO ID</option>
+                        <option value="option2">사번</option>
+                        <option value="option3">이름</option>
+                    </select>
+                </div>
+                <div class="popup-search-wrap w100p">
+                    <div class="ui action input w100p">
+                        <input type="text" placeholder="홍길동 선임 (업무혁신담당 > 인프라팀)">
+                        <div class="ui primary button" id="popup-sample">
+                            검색
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="popup-table">
+                <table class="ui celled table">
+                    <colgroup>
+                        <col width="40">
+                        <col width="160">
+                        <col width="160">
+                        <col width="160">
+                        <col width="160">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>신청자</th>
+                            <th>SSO ID</th>
+                            <th>직급</th>
+                            <th>부서</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="center aligned" data-label="check">
+                                <div class="ui fitted radio checkbox">
+                                    <input type="radio" name="user" id="user1">
+                                    <label for="user1"></label>
+                                </div>
+                            </td>
+                            <td class="center aligned" data-label="신청자">
+                                홍길동
+                            </td>
+                            <td class="center aligned" data-label="SSO ID">
+                                Gildong.Hong
+                            </td>
+                            <td class="center aligned" data-label="직급">
+                                선임연구원
+                            </td>
+                            <td class="center aligned" data-label="부서">
+                                인프라팀
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="center aligned" data-label="check">
+                                <div class="ui fitted radio checkbox">
+                                    <input type="radio" name="user" id="user2">
+                                    <label for="user2"></label>
+                                </div>
+                            </td>
+                            <td class="center aligned" data-label="신청자">
+                                홍길동
+                            </td>
+                            <td class="center aligned" data-label="SSO ID">
+                                Gildong.Hong
+                            </td>
+                            <td class="center aligned" data-label="직급">
+                                선임연구원
+                            </td>
+                            <td class="center aligned" data-label="부서">
+                                인프라팀
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="center aligned" data-label="check">
+                                <div class="ui fitted radio checkbox">
+                                    <input type="radio" name="user" id="user3">
+                                    <label for="user3"></label>
+                                </div>
+                            </td>
+                            <td class="center aligned" data-label="신청자">
+                                홍길동
+                            </td>
+                            <td class="center aligned" data-label="SSO ID">
+                                Gildong.Hong
+                            </td>
+                            <td class="center aligned" data-label="직급">
+                                선임연구원
+                            </td>
+                            <td class="center aligned" data-label="부서">
+                                인프라팀
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="center aligned" data-label="check">
+                                <div class="ui fitted radio checkbox">
+                                    <input type="radio" name="user" id="user4">
+                                    <label for="user4"></label>
+                                </div>
+                            </td>
+                            <td class="center aligned" data-label="신청자">
+                                홍길동
+                            </td>
+                            <td class="center aligned" data-label="SSO ID">
+                                Gildong.Hong
+                            </td>
+                            <td class="center aligned" data-label="직급">
+                                선임연구원
+                            </td>
+                            <td class="center aligned" data-label="부서">
+                                인프라팀
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="center aligned" data-label="check">
+                                <div class="ui fitted radio checkbox">
+                                    <input type="radio" name="user" id="user5">
+                                    <label for="user5"></label>
+                                </div>
+                            </td>
+                            <td class="center aligned" data-label="신청자">
+                                홍길동
+                            </td>
+                            <td class="center aligned" data-label="SSO ID">
+                                Gildong.Hong
+                            </td>
+                            <td class="center aligned" data-label="직급">
+                                선임연구원
+                            </td>
+                            <td class="center aligned" data-label="부서">
+                                인프라팀
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="center aligned" data-label="check">
+                                <div class="ui fitted radio checkbox">
+                                    <input type="radio" name="user" id="user6">
+                                    <label for="user6"></label>
+                                </div>
+                            </td>
+                            <td class="center aligned" data-label="신청자">
+                                홍길동
+                            </td>
+                            <td class="center aligned" data-label="SSO ID">
+                                Gildong.Hong
+                            </td>
+                            <td class="center aligned" data-label="직급">
+                                선임연구원
+                            </td>
+                            <td class="center aligned" data-label="부서">
+                                인프라팀
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="center aligned" data-label="check">
+                                <div class="ui fitted radio checkbox">
+                                    <input type="radio" name="user" id="user7">
+                                    <label for="user7"></label>
+                                </div>
+                            </td>
+                            <td class="center aligned" data-label="신청자">
+                                홍길동
+                            </td>
+                            <td class="center aligned" data-label="SSO ID">
+                                Gildong.Hong
+                            </td>
+                            <td class="center aligned" data-label="직급">
+                                선임연구원
+                            </td>
+                            <td class="center aligned" data-label="부서">
+                                인프라팀
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="center aligned" data-label="check">
+                                <div class="ui fitted radio checkbox">
+                                    <input type="radio" name="user" id="user8">
+                                    <label for="user8"></label>
+                                </div>
+                            </td>
+                            <td class="center aligned" data-label="신청자">
+                                홍길동
+                            </td>
+                            <td class="center aligned" data-label="SSO ID">
+                                Gildong.Hong
+                            </td>
+                            <td class="center aligned" data-label="직급">
+                                선임연구원
+                            </td>
+                            <td class="center aligned" data-label="부서">
+                                인프라팀
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="center aligned" data-label="check">
+                                <div class="ui fitted radio checkbox">
+                                    <input type="radio" name="user" id="user9">
+                                    <label for="user9"></label>
+                                </div>
+                            </td>
+                            <td class="center aligned" data-label="신청자">
+                                홍길동
+                            </td>
+                            <td class="center aligned" data-label="SSO ID">
+                                Gildong.Hong
+                            </td>
+                            <td class="center aligned" data-label="직급">
+                                선임연구원
+                            </td>
+                            <td class="center aligned" data-label="부서">
+                                인프라팀
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="center aligned" data-label="check">
+                                <div class="ui fitted radio checkbox">
+                                    <input type="radio" name="user" id="user10">
+                                    <label for="user10"></label>
+                                </div>
+                            </td>
+                            <td class="center aligned" data-label="신청자">
+                                홍길동
+                            </td>
+                            <td class="center aligned" data-label="SSO ID">
+                                Gildong.Hong
+                            </td>
+                            <td class="center aligned" data-label="직급">
+                                선임연구원
+                            </td>
+                            <td class="center aligned" data-label="부서">
+                                인프라팀
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="pagination-wrap">
+                <div class="ui pagination menu">
+                    <a class="item">
+                        &lt;
+                    </a>
+                    <a class="item ltsp">
+                        &lt;&lt;
+                    </a>
+                    <a class="item active">
+                        1
+                    </a>
+                    <a class="item">
+                        2
+                    </a>
+                    <a class="item">
+                        3
+                    </a>
+                    <a class="item">
+                        4
+                    </a>
+                    <div class="disabled item">
+                        ...
+                    </div>
+                    <a class="item">
+                        25
+                    </a>
+                    <a class="item ltsp">
+                        &gt;&gt;
+                    </a>
+                    <a class="item">
+                        &gt;
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="actions">
+            <div class="ui primary button">
+                선택
+            </div>
+            <div class="ui secondary button">
+                취소
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        $('.dropdown').dropdown();
+
+        $('#rangestart').calendar({
+            type: 'date',
+            endCalendar: $('#rangeend'),
+            formatter: {
+                date: function (date, settings) {
+                    if (!date) return '';
+                    var day = date.getDate();
+                    var month = date.getMonth() + 1;
+                    var year = date.getFullYear();
+                    return year + '-' + month + '-' + day;
+                }
+            }
+        });
+        $('#rangeend').calendar({
+            type: 'date',
+            startCalendar: $('#rangestart'),
+            formatter: {
+                date: function (date, settings) {
+                    if (!date) return '';
+                    var day = date.getDate();
+                    var month = date.getMonth() + 1;
+                    var year = date.getFullYear();
+                    return year + '-' + month + '-' + day;
+                }
+            }
+        });
+
+        $('#popup-sample').on('click', function () {
+            $('#popup-sample-view').modal({
+                inverted: true
+            }).modal('show');
+        });
+    </script>
+
+</body>
+
+</html>
