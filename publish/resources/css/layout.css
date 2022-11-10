@@ -38,7 +38,7 @@
 }
 
 .point-color.red {
-    color: #AA1239;
+    color: #D4859E;
 }
 
 .badge {
@@ -58,7 +58,7 @@
 }
 
 .badge.red {
-    background-color: #AA1239;
+    background-color: #D4859E;
 }
 
 .badge.yellow {
@@ -68,8 +68,8 @@
 html,
 body {
     font-size: 16px;
-    font-weight: 600;
-    color: #333333;
+    /* font-weight: 600; */
+    color: #212529;
     padding: 0;
     margin: 0;
 }
@@ -82,7 +82,7 @@ body {
 body.iframe-contents {
     /* min-width: 1153px;
     overflow-x: hidden; */
-    zoom: 0.9;
+    /* zoom: 0.9; */
     background-color: #ffffff;
 }
 
@@ -370,6 +370,10 @@ body.iframe-contents::-webkit-scrollbar-thumb:hover {
     color: #333333;
 }
 
+*::placeholder {
+    color: #969FA8!important;
+}
+
 .lg-container .lg-side .lg-side-menu .lg-side-group-title {
     background-color: #439099;
     color: #ffffff;
@@ -594,7 +598,7 @@ body.iframe-contents::-webkit-scrollbar-thumb:hover {
 }
 
 .lg-main-menu ul li.active>a {
-    background-color: #AA1239;
+    background-color: #D4859E;
     color: #ffffff;
     background-image: url(../images/menu/ico_arrow_white.svg);
     font-weight: 600;
@@ -602,7 +606,7 @@ body.iframe-contents::-webkit-scrollbar-thumb:hover {
 
 
 .lg-main-menu ul li.active p {
-    background-color: #AA1239;
+    background-color: #D4859E;
     color: #ffffff;
     background-image: url(../images/menu/ico_minus_white.svg);
     font-weight: 600;
@@ -626,7 +630,7 @@ body.iframe-contents::-webkit-scrollbar-thumb:hover {
 
 .lg-main-menu ul li.active .lg-sub-menu li.active a {
     background-color: rgba(170, 18, 57, 0.16);
-    color: #AA1239;
+    color: #D4859E;
     background-image: url(../images/menu/ico_arrow_active.svg);
 }
 
@@ -637,7 +641,7 @@ body.iframe-contents::-webkit-scrollbar-thumb:hover {
 }
 
 .lg-contents {
-    padding: 40px;
+    padding: 32px;
     position: relative;
 }
 
@@ -678,7 +682,7 @@ div.loading-bar::after {
     width: 50px;
     height: 4px;
     position: absolute;
-    background-color: #AA1239;
+    background-color: #D4859E;
     transform: translateX(-20px);
     animation: loop 2s ease infinite;
     border-radius: 10px;

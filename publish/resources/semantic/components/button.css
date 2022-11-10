@@ -752,7 +752,7 @@
 .ui.basic.buttons {
   -webkit-box-shadow: none;
           box-shadow: none;
-  border: 1px solid rgba(34, 36, 38, 0.15);
+  border: 1px solid #CED4DA;
   border-radius: 0.28571429rem;
 }
 .ui.basic.buttons .button {
@@ -849,7 +849,7 @@
 
 /* Basic Group */
 .ui.basic.buttons .button {
-  border-left: 1px solid rgba(34, 36, 38, 0.15);
+  border-left: 1px solid #CED4DA;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
@@ -858,7 +858,7 @@
 }
 .ui.basic.vertical.buttons .button {
   border-left-width: 0px;
-  border-top: 1px solid rgba(34, 36, 38, 0.15);
+  border-top: 1px solid #CED4DA;
 }
 .ui.basic.vertical.buttons .button:first-child {
   border-top-width: 0px;

@@ -6,6 +6,7 @@
 .ui.secondary.pointing.menu {
     border-bottom-width: 1px;
     margin-bottom: 0;
+    display: none;
 }
 
 .ui.secondary.pointing.menu .item {
@@ -16,14 +17,14 @@
 
 .ui.secondary.pointing.menu .active.item,
 .ui.secondary.pointing.menu .active.item:hover {
-    border-color: #AA1239;
-    color: #AA1239;
+    border-color: #D4859E;
+    color: #D4859E;
 }
 
 .ui.button {
-    padding: 12px 10px;
+    padding: 11px 10px;
     margin: 0;
-    font-weight: 600!important;
+    /* font-weight: 600!important; */
     font-size: 14px;
     min-width: 100px;
     justify-content: center!important;
@@ -31,8 +32,8 @@
 
 .ui.icon.buttons .button, .ui.icon.button {
     padding: 0;
-    width: 38px;
-    height: 38px;
+    width: 36px;
+    height: 36px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -61,7 +62,7 @@
 }
 
 .ui.input > input {
-    min-height: 38px;
+    min-height: 36px;
 }
 
 .ui.input.action > .input-empty {
@@ -233,11 +234,15 @@
 }
 
 .ui.selection.dropdown {
-    min-height: 38px;
-    padding: 0.685714em 2.1em 0.685714em 1em;
+    min-height: 36px;
+    padding: 10px 2.1em 0.5em 1em;
 }
 
 .ui.table:last-child,
 .ui.table {
-    margin-bottom: 1px;
+    margin-bottom: 1rem;
+}
+
+.label-form-1 .row:last-child {
+    margin-bottom: 0;
 }

@@ -16,8 +16,8 @@
 
 .ui.secondary.pointing.menu .active.item,
 .ui.secondary.pointing.menu .active.item:hover {
-    border-color: #AA1239;
-    color: #AA1239;
+    border-color: #D4859E;
+    color: #D4859E;
 }
 
 .ui.button {
@@ -30,8 +30,8 @@
 
 .ui.icon.buttons .button, .ui.icon.button {
     padding: 0;
-    width: 38px;
-    height: 38px;
+    width: 36px;
+    height: 36px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -60,7 +60,7 @@
 }
 
 .ui.input > input {
-    min-height: 38px;
+    min-height: 36px;
 }
 
 .ui.disabled.checkbox .box:after, .ui.disabled.checkbox label, .ui.checkbox input[disabled] ~ .box:after, .ui.checkbox input[disabled] ~ label {

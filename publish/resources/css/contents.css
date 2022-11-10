@@ -4,7 +4,7 @@
 
 .ui.segment {
     box-shadow: 0px 7px 20px rgba(100, 100, 111, 0.15);
-    -webkit-box-shadow: 0px 7px 20px rgba(100, 100, 111, 0.15);
+    -webkit-box-shadow: 0px 7px 20px rgba(100, 100, 111, 0.15);.contents-column.column
     display: flex;
     border-radius: 8px;
 }
@@ -59,7 +59,7 @@
 }
 
 .lg-main-title h2 span {
-    color: #AA1239;
+    color: #D4859E;
     font-size: 0.875rem;
     margin-left: 6px;
 }
@@ -67,17 +67,17 @@
 .lg-main-title a.btn-more {
     display: flex;
     font-size: 0.75rem;
-    color: #AA1239;
+    color: #D4859E;
     height: 22px;
     padding: 0 7px;
-    border: 1px solid #AA1239;
+    border: 1px solid #D4859E;
     position: relative;
     top: -2px;
     border-radius: 12px;
 }
 
 .lg-main-title a.btn-more:hover {
-    background-color: #AA1239;
+    background-color: #D4859E;
     color: #ffffff;
 }
 
@@ -95,12 +95,12 @@
 .lg-main-title .swiper-pagination-bullet {
     display: flex !important;
     font-size: 0.75rem;
-    color: #AA1239;
+    color: #D4859E;
     height: 22px;
     width: 22px;
     align-items: center;
     justify-content: center;
-    border: 1px solid #AA1239;
+    border: 1px solid #D4859E;
     position: relative;
     top: -2px;
     border-radius: 12px;
@@ -112,14 +112,14 @@
 
 .lg-main-title .swiper-pagination-bullet-active,
 .lg-main-title .swiper-pagination-bullet:hover {
-    background-color: #AA1239;
+    background-color: #D4859E;
     color: #ffffff;
 }
 
 
 .lg-mymenu {
     padding-right: 32px;
-    border-right: 1px solid rgba(34, 36, 38, 0.15);
+    border-right: 1px solid #CED4DA;
     height: 430px;
 }
 
@@ -233,7 +233,7 @@
 
 
 .lg-mymenu a.segment:focus {
-    background-color: #AA1239;
+    background-color: #D4859E;
 }
 
 .lg-mymenu a.segment:focus p {
@@ -318,7 +318,7 @@
 }
 
 .lg-sppick a.segment.lg-red {
-    background-color: #AA1239;
+    background-color: #D4859E;
     margin-bottom: 1rem;
 }
 
@@ -445,7 +445,7 @@
 }
 
 .lg-mysecurity .bad .circle {
-    stroke: #AA1239;
+    stroke: #D4859E;
 }
 
 .percentage {
@@ -487,7 +487,7 @@
 }
 
 .lg-mysecurity .bad .grade .my-grade {
-    background-color: #AA1239;
+    background-color: #D4859E;
 }
 
 .lg-mysecurity .security-table-wrap {
@@ -572,7 +572,7 @@
 }
 
 .lg-main-notice ul li .writer {
-    color: #AA1239;
+    color: #D4859E;
     margin-left: auto;
 }
 
@@ -600,7 +600,7 @@
     display: flex;
     align-items: center;
     padding: 17px 30px;
-    border-bottom: 1px solid rgba(34, 36, 38, 0.15);
+    border-bottom: 1px solid #CED4DA;
 }
 
 .lg-myapplication ul li:last-child {
@@ -655,7 +655,7 @@
 }
 
 .path li:last-child {
-    color: #AA1239;
+    color: #D4859E;
 }
 
 .path li:last-child::after {
@@ -671,9 +671,10 @@
     align-items: center;
     justify-content: space-between;
     padding: 2rem 0;
-    border-bottom: 1px solid rgba(34, 36, 38, 0.15);
+    border-bottom: 1px solid #CED4DA;
     margin-bottom: 2rem;
     background-color: #ffffff;
+    /* display: none; */
 }
 
 .sticky .path-wrap {
@@ -759,6 +760,7 @@
     height: 156px;
     overflow-y: auto;
     margin-bottom: 2rem;
+    display: none;
 }
 
 /* form */
@@ -786,15 +788,15 @@
 }
 
 .label-form-1 .row .label-column {
-    width: 140px;
-    height: 38px;
+    width: 158px;
+    height: 36px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
 }
 
 .label-form-1 .row .label-column label {
-    font-size: 1.0625rem;
+    font-size: 14px;
     font-weight: 600;
     letter-spacing: -1px;
 }
@@ -803,11 +805,11 @@
     content: '*';
     margin-left: 5px;
     font-size: 1.25rem;
-    color: #AA1239;
+    color: #B7335D;
 }
 
 .label-form-1 .row .contents-column {
-    width: calc(100% - 140px);
+    width: calc(100% - 158px);
     display: flex;
     align-items: center;
 }
@@ -818,6 +820,7 @@
 
 .label-form-1 .row .contents-column .default-with {
     width: 420px;
+    height: 36px;
 }
 
 .label-form-1 .row .contents-column .default-with-half {
@@ -850,8 +853,8 @@
 
 .btn-check-wrap input:checked+.ui.basic.buttons .button,
 .btn-check-wrap input:checked+.ui.basic.button {
-    background: #AA1239 !important;
-    border-color: #AA1239;
+    background: #D4859E !important;
+    border-color: #D4859E;
     color: #ffffff !important;
     box-shadow: none;
     -webkit-box-shadow: none;
@@ -865,14 +868,14 @@
 .popup-search-wrap .ui.selection.dropdown {
     width: 170px;
     min-width: 0;
-    min-height: 38px;
+    min-height: 36px;
 }
 
 
 .from-to-date-picker>.ui.calendar {
     width: 135px;
     min-width: 0;
-    height: 38px;
+    height: 36px;
 }
 
 .row.multi .contents-column .ui.selection.dropdown {
@@ -886,7 +889,7 @@
 .from-to-date-picker>.ui.calendar+span {
     margin: 0 10px;
     font-weight: 600;
-    line-height: 38px;
+    line-height: 36px;
 }
 
 .from-to-date-picker>.ui.calendar .ui.input {
@@ -930,7 +933,7 @@
     padding: 11px 14px 12px;
     height: 156px;
     background: #FFFFFF;
-    border: 2px solid #AA1239;
+    border: 2px solid #D4859E;
     border-radius: 4px;
     overflow-y: auto;
     margin-bottom: 1rem;
@@ -961,10 +964,10 @@
 
 .search-group .search-wrap label {
     display: flex;
-    height: 38px;
+    height: 36px;
     align-items: center;
     justify-content: flex-start;
-    font-size: 1rem;
+    font-size: 14px;
     font-weight: 600;
     margin-bottom: 10px;
 }
@@ -1045,8 +1048,8 @@
 }
 
 .label-form-2 .row .label-column {
-    width: 140px;
-    height: 38px;
+    width: 158px;
+    height: 36px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -1064,7 +1067,7 @@
     content: '*';
     margin-left: 5px;
     font-size: 1.25rem;
-    color: #AA1239;
+    color: #D4859E;
 }
 
 .label-form-2 .row .label-column .ui.form {
@@ -1167,8 +1170,8 @@ div.dataTables_wrapper div.row.dt-table+.row {
 
 
 .list-label-column .label-column {
-    width: 140px;
-    height: 38px;
+    width: 158px;
+    height: 36px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -1186,7 +1189,7 @@ div.dataTables_wrapper div.row.dt-table+.row {
     content: '*';
     margin-left: 5px;
     font-size: 1.25rem;
-    color: #AA1239;
+    color: #D4859E;
 }
 
 .list-label-column .label-column .ui.form {
@@ -1227,7 +1230,7 @@ div.dataTables_wrapper div.row.dt-table+.row {
 th.required::after {
     content: '*';
     margin-left: 5px;
-    color: #AA1239;
+    color: #D4859E;
 }
 
 td .btn-check-wrap,
@@ -1264,7 +1267,7 @@ td .btn-group {
 }
 
 .sitemap-title {
-    color: #AA1239;
+    color: #D4859E;
     font-size: 1.25rem;
     font-weight: 600;
 }
@@ -1416,9 +1419,9 @@ td .btn-group {
     width: 100px;
 }
 
-.contents-column.column {
+/* .contents-column.column {
     gap: 10px;
-}
+} */
 
 
 .bet-btn-wrap {
@@ -1524,7 +1527,7 @@ td .btn-group {
     }
 
     20% {
-        border-color: #AA1239;
+        border-color: #D4859E;
     }
 
     40% {
@@ -1532,7 +1535,7 @@ td .btn-group {
     }
 
     60% {
-        border-color: #AA1239;
+        border-color: #D4859E;
     }
 
     80% {
@@ -1540,7 +1543,7 @@ td .btn-group {
     }
 
     100% {
-        border-color: #AA1239;
+        border-color: #D4859E;
     }
 }
 
@@ -1583,7 +1586,7 @@ td .btn-group {
     animation-duration: 1s;
     animation-direction: alternate;
     animation-iteration-count: 1;
-    border: 60px solid #AA1239;
+    border: 60px solid #D4859E;
 }
 
 .desk-0302-img.border-ylw {
@@ -1758,7 +1761,7 @@ table.dataTable tbody>tr.selected, table.dataTable tbody>tr>.selected {
     align-items: center;
     justify-content: flex-start;
     position: relative;
-    height: 38px;
+    height: 36px;
 }
 
 .sign-finish img {
@@ -1786,7 +1789,7 @@ i.ico-file {
 	display:flex;
 	align-items: center;
 	gap: 10px;
-	min-height: 38px;
+	min-height: 36px;
 }
 
 #macAddressInputWrap .ui.input + .ui.input {
